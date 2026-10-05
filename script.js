@@ -1,3 +1,4 @@
 document.getElementById("myButton").addEventListener("click", function() {
-    alert("Hello Ali! Your button is working!");
+    this.textContent = "Button Clicked!";
+    this.style.backgroundColor = "#ff5733";
 });
