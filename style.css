@@ -1,6 +1,6 @@
-/* Global Styles */
+/* Global Styles & Transparent Background */
 body {
-    background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(20, 20, 20, 0.9)), url('profile.jpg');
+    background: linear-gradient(rgba(10, 10, 10, 0.4), rgba(15, 15, 15, 0.5)), url('profile.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -8,94 +8,186 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Header & Navigation */
+/* Centered Header & Navigation */
 header {
-    background: #0d1117;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1rem 2rem;
+    background: transparent;
+    padding: 1.5rem 2rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 header .logo {
-    color: #ffffff;
-    font-size: 1.4rem;
+    color: #ffd700;
+    font-size: 1.8rem;
     font-weight: 700;
     text-decoration: none;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
 }
 
 nav {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav a {
-    color: #cccccc;
+    color: #ffb703;
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 183, 3, 0.4);
 }
 
 nav a:hover, nav a.active {
     color: #ffffff;
-    border-bottom: 2px solid #ffffff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+    border-bottom: 2px solid #ffd700;
     padding-bottom: 2px;
 }
 
-/* Hero Section */
-.hero-content {
-    text-align: center;
-    padding: 4rem 2rem;
-}
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    background: linear-gradient(135deg, #ffffff 0%, #aaaaaa 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-}
-
-.hero-inline-img {
-    height: 1.1em;
-    vertical-align: middle;
-    border-radius: 6px;
-}
-
-.hero-content p {
-    color: #cccccc;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-}
-
-/* General Containers & Content */
+/* Main Container - Centered and Well-Fitted Across All Pages */
 main {
-    max-width: 1000px;
+    flex: 1;
+    max-width: 850px;
     margin: 2rem auto;
-    padding: 0 2rem;
+    padding: 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(15, 15, 15, 0.75);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Page Headings & Text */
+h1, h2 {
+    color: #ffffff;
+    margin-top: 0;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+main > p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Cards Layout (Projects & About Sections) */
+.card-container, .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .card {
-    background: rgba(20, 20, 20, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-    backdrop-filter: blur(5px);
+    background: rgba(25, 25, 25, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 1.8rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
+.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 215, 0, 0.6);
+}
+
+.card h3 {
+    color: #ffd700;
+    margin-bottom: 0.8rem;
+}
+
+.card p {
+    color: #b0b0b0;
+    line-height: 1.5;
+}
+
+.card a, .btn {
+    color: #0d0d0d;
+    background: #ffd700;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 600;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card a:hover, .btn:hover {
+    background: #ffea75;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+}
+
+/* Contact Form Styling - Well Centered & Sized */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+input, textarea {
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.9rem 1rem;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+button[type="submit"], input[type="submit"] {
+    background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+    color: #0d0d0d;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover, input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 2rem;
     color: #888888;
     font-size: 0.9rem;
+    background: transparent;
 }
