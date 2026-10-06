@@ -16,7 +16,7 @@ body {
 /* Header & Navigation with Shiny Glowing Dark Blue */
 header {
     background: transparent;
-    padding: 1.5rem 2rem;
+    padding: 3rem 2rem 1.5rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
