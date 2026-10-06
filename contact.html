@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Ali's Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Ali's Site</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Card -->
+    <div class="hero-container" style="padding-top: 100px;">
+        <div class="card">
+            <h2>Get in Touch</h2>
+            <p>Have a question or want to work together? Send me a message!</p>
+            
+            <!-- Formspree Contact Form -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                <input type="text" name="name" placeholder="Your Name" required style="padding: 12px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: white; font-family: 'Poppins', sans-serif;">
+                
+                <input type="email" name="email" placeholder="Your Email" required style="padding: 12px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: white; font-family: 'Poppins', sans-serif;">
+                
+                <textarea name="message" placeholder="Your Message" rows="4" required style="padding: 12px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: white; font-family: 'Poppins', sans-serif; resize: vertical;"></textarea>
+                
+                <button type="submit" style="background: #4ecca3; color: #16213e; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-family: 'Poppins', sans-serif;">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Ali Mohammed. All rights reserved.</p>
+    </footer>
+</body>
+</html>
