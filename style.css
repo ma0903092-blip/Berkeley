@@ -16,13 +16,13 @@ body {
 /* Header & Navigation with Shiny Glowing Dark Blue */
 header {
     background: transparent;
-    padding: 3rem 2rem 1.5rem 2rem;
+    padding: 1.5rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 2rem auto 0 auto; /* Adds space at the top so it drops down */
     width: 100%;
     box-sizing: border-box;
 }
