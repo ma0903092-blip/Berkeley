@@ -69,3 +69,16 @@
         button:hover {
             background: #3ba883;
         }
+        /* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .card {
+        margin: 0 15px;
+        padding: 20px;
+    }
+}
