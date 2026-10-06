@@ -13,7 +13,7 @@ body {
     min-height: 100vh;
 }
 
-/* Centered Header & Navigation */
+/* Header & Navigation with Shiny Glowing Dark Blue */
 header {
     background: transparent;
     padding: 1.5rem 2rem;
@@ -28,11 +28,11 @@ header {
 }
 
 header .logo {
-    color: #ffd700;
+    color: #1e90ff;
     font-size: 1.8rem;
     font-weight: 700;
     text-decoration: none;
-    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    text-shadow: 0 0 15px rgba(30, 144, 255, 0.8), 0 0 30px rgba(0, 191, 255, 0.5);
 }
 
 nav {
@@ -43,18 +43,18 @@ nav {
 }
 
 nav a {
-    color: #ffb703;
+    color: #00bfff;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    text-shadow: 0 0 10px rgba(255, 183, 3, 0.4);
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.6), 0 0 20px rgba(30, 144, 255, 0.4);
 }
 
 nav a:hover, nav a.active {
     color: #ffffff;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
-    border-bottom: 2px solid #ffd700;
+    text-shadow: 0 0 20px rgba(0, 191, 255, 1), 0 0 35px rgba(30, 144, 255, 0.8);
+    border-bottom: 2px solid #00bfff;
     padding-bottom: 2px;
 }
 
