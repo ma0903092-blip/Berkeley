@@ -34,31 +34,41 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
-.navbar .logo {
-    color: #00bfff;
-    font-size: 1.6rem;
-    font-weight: 800;
-    text-decoration: none;
-    text-shadow: 0 0 10px rgba(0, 191, 255, 0.8);
-}
-
-.navbar .links {
+/* ==========================================
+   CUSTOM DESIGNED LOGO STYLING
+   ========================================== */
+.navbar .logo-container {
     display: flex;
-    gap: 1.8rem;
-}
-
-.navbar .links a {
-    color: #1e90ff;
+    align-items: center;
+    gap: 0.6rem;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    text-shadow: 0 0 6px rgba(30, 144, 255, 0.5);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.navbar .links a:hover, .navbar .links a.active {
-    color: #ffffff;
-    text-shadow: 0 0 15px rgba(0, 191, 255, 1);
+.navbar .logo-container:hover {
+    transform: scale(1.05);
+}
+
+.navbar .logo-icon {
+    font-size: 1.4rem;
+    background: rgba(0, 191, 255, 0.15);
+    border: 1px solid rgba(0, 191, 255, 0.4);
+    border-radius: 8px;
+    padding: 0.3rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.25);
+}
+
+.navbar .logo-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #ffffff 30%, #00bfff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: inherit;
 }
 
 /* ==========================================
