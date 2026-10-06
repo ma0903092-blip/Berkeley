@@ -34,8 +34,8 @@
     color: #4ecca3;
     border-bottom: 2px solid #4ecca3;
 }
-   body {
-    background: linear-gradient(rgba(13, 11, 7, 0.85), rgba(42, 34, 15, 0.85)), url('profile.jpg');
+  body {
+    background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(20, 20, 20, 0.9)), url('profile.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -100,9 +100,10 @@
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
-    background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #b8860b 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #dcdcdc 50%, #888888 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .hero-inline-img {
