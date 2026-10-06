@@ -3,51 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berkeley | Web Developer & Cyber Criminologist</title>
+    <title>Berkeley | Web Developer & Cyber Investigator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Bar with Custom Coded Logo -->
     <nav class="hacker-header">
-    <div class="header-top">
-        <span>root@berkeley-portfolio:~#</span>
-        <span class="blink">_</span>
-    </div>
-    <div class="header-main">
-        <a href="./index.html" class="logo-container">
-            <div class="logo-icon">
-                <pre>   ___
- __| _/_
+        <div class="header-top">
+            <span>root@berkeley-portfolio:~#</span>
+            <span class="blink">_</span>
+        </div>
+        <div class="header-main">
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon">
+                    <pre>   ___
+__| _/_
 /__ / __ \
 \___/___/
    </pre>
+                </div>
+                <span class="logo-text">/berkeley</span>
+            </a>
+            <div class="links">
+                <a href="index.html" class="active">./home</a>
+                <a href="about.html">./about_me</a>
+                <a href="projects.html">./projects_db</a>
+                <a href="contact.html">./decrypt_comms</a>
             </div>
-            <span class="logo-text">/berkeley</span>
-        </a>
-        <div class="links">
-            <a href="./index.html" class="active">./home</a>
-            <a href="./about.html">./about_me</a>
-            <a href="./projects.html">./projects_db</a>
-            <a href="./contact.html">./decrypt_comms</a>
         </div>
-    </div>
-    <div class="header-bottom">
-        status: [SYSTEM_READY] | mode: [SECURE_SHELL]
-    </div>
-</nav>
-        <div class="links">
-            <a href="./index.html" class="active">Home</a>
-            <a href="./about.html">About</a>
-            <a href="./projects.html">Projects</a>
-            <a href="./contact.html">Contact</a>
+        <div class="header-bottom">
+            status: [SYSTEM_READY] | mode: [SECURE_SHELL]
         </div>
     </nav>
 
-   <!-- Hero Content Section -->
-    <main class="hero-content">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Exploring the intersection of web engineering and cyber crime investigation.</p>
-        <a href="projects.html" class="btn">View My Projects</a>
+    <main class="main-content-box">
+        <h1 class="main-title">Welcome to My Portfolio</h1>
+        <p class="main-subtitle">Exploring the intersection of web engineering and cyber crime investigation.</p>
+        <button class="hacker-button" onclick="window.location.href='projects.html'">View My Projects</button>
     </main>
+
+    <footer class="hacker-footer">
+        secure connection established // © 2026 berkeley
+    </footer>
 </body>
 </html>
