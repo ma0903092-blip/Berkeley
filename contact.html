@@ -3,43 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berkeley | Web Developer & Cyber Criminologist</title>
+    <title>Berkeley | Contact</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <a href="./index.html" class="logo">Berkeley</a>
         <div class="links">
-    <a href="./index.html">Home</a>
-    <a href="./about.html">About</a>
-    <a href="./projects.html">Projects</a>
-    <a href="./contact.html">Contact</a>
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./projects.html">Projects</a>
+            <a href="./contact.html" class="active">Contact</a>
         </div>
     </nav>
 
-    <!-- Main Content Card -->
-    <div class="hero-container" style="padding-top: 100px;">
-        <div class="card">
-            <h2>Get in Touch</h2>
-            <p>Have a question or want to work together? Send me a message!</p>
-            
-            <!-- Formspree Contact Form -->
-            <form action="https://formspree.io/f/xvkzgrpp" method="POST" style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
-                <input type="text" name="name" placeholder="Your Name" required style="padding: 12px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: white; font-family: 'Poppins', sans-serif;">
-                
-                <input type="email" name="email" placeholder="Your Email" required style="padding: 12px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: white; font-family: 'Poppins', sans-serif;">
-                
-                <textarea name="message" placeholder="Your Message" rows="4" required style="padding: 12px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: white; font-family: 'Poppins', sans-serif; resize: vertical;"></textarea>
-                
-                <button type="submit" style="background: #4ecca3; color: #16213e; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-family: 'Poppins', sans-serif;">Send Message</button>
-            </form>
-        </div>
-    </div>
+    <!-- Main Content Box -->
+    <main>
+        <h1>Get in Touch</h1>
+        <p>Have a question or want to work together? Send me a message!</p>
+        
+        <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <p>&copy; 2026 Berkeley. All rights reserved.</p>
     </footer>
 </body>
