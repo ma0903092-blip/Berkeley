@@ -3,68 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berkeley | My Projects</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <<link rel="stylesheet" href="style.css">
+    <title>Berkeley | Projects</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <!-- Navigation Bar with Custom Coded Logo -->
-   <nav class="hacker-header">
-    <div class="header-top">
-        <span>root@berkeley-portfolio:~#</span>
-        <span class="blink">_</span>
-    </div>
-    <div class="header-main">
-        <a href="./index.html" class="logo-container">
+    <nav class="navbar">
+        <a href="index.html" class="logo-container">
             <div class="logo-icon">
-                <pre>   ___
- __| _/_
-/__ / __ \
-\___/___/
-   </pre>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="M12 8v4"></path>
+                    <path d="M12 16h.01"></path>
+                </svg>
             </div>
-            <span class="logo-text">/berkeley</span>
+            <span class="logo-text">Berkeley</span>
         </a>
         <div class="links">
-            <a href="./index.html" class="active">./home</a>
-            <a href="./about.html">./about_me</a>
-            <a href="./projects.html">./projects_db</a>
-            <a href="./contact.html">./decrypt_comms</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="contact.html">Contact</a>
         </div>
-    </div>
-    <div class="header-bottom">
-        status: [SYSTEM_READY] | mode: [SECURE_SHELL]
-    </div>
-</nav>
-        <div class="links">
-            <a href="./index.html" class="active">Home</a>
-            <a href="./about.html">About</a>
-            <a href="./projects.html">Projects</a>
-            <a href="./contact.html">Contact</a>
-        </div>
-    </nav> 
+    </nav>
 
-    <!-- Main Content Box -->
-    <main>
-        <h1>My Projects</h1>
-        <p>Here are some of the cool applications and web projects I've built.</p>
-        
-        <div class="card-container">
-            <div class="card">
-                <h3>Berkeley Portfolio</h3>
-                <p>A fully responsive multi-page portfolio website built with HTML5, CSS3, and deployed via GitHub Pages.</p>
-                <a href="https://github.com/ma0903092-blip/Berkeley" target="_blank">View on GitHub &rarr;</a>
-            </div>
-            <div class="card">
-                <h3>Coming Soon</h3>
-                <p>An upcoming web application currently in development. Stay tuned for updates!</p>
-                <p style="margin-top: 1rem; color: #00bfff; font-weight: 600;">In Progress</p>
-            </div>
-        </div>
+    <main class="main-container">
+        <h1 class="main-title">My Projects</h1>
+        <p class="main-subtitle">Here is a showcase of my web development and security analysis works.</p>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Berkeley. All rights reserved.</p>
-    </footer>
 </body>
 </html>

@@ -4,61 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berkeley | Contact</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Bar with Custom Coded Logo -->
-    <nav class="hacker-header">
-    <div class="header-top">
-        <span>root@berkeley-portfolio:~#</span>
-        <span class="blink">_</span>
-    </div>
-    <div class="header-main">
-        <a href="./index.html" class="logo-container">
+    <nav class="navbar">
+        <a href="index.html" class="logo-container">
             <div class="logo-icon">
-                <pre>   ___
- __| _/_
-/__ / __ \
-\___/___/
-   </pre>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="M12 8v4"></path>
+                    <path d="M12 16h.01"></path>
+                </svg>
             </div>
-            <span class="logo-text">/berkeley</span>
+            <span class="logo-text">Berkeley</span>
         </a>
         <div class="links">
-            <a href="./index.html" class="active">./home</a>
-            <a href="./about.html">./about_me</a>
-            <a href="./projects.html">./projects_db</a>
-            <a href="./contact.html">./decrypt_comms</a>
-        </div>
-    </div>
-    <div class="header-bottom">
-        status: [SYSTEM_READY] | mode: [SECURE_SHELL]
-    </div>
-</nav>
-        <div class="links">
-            <a href="./index.html" class="active">Home</a>
-            <a href="./about.html">About</a>
-            <a href="./projects.html">Projects</a>
-            <a href="./contact.html">Contact</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html" class="active">Contact</a>
         </div>
     </nav>
 
-    <!-- Main Content Box -->
-    <main>
-        <h1>Get in Touch</h1>
-        <p>Have a question or want to work together? Send me a message!</p>
-        
-        <form action="#" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
+    <main class="main-container">
+        <h1 class="main-title">Contact Me</h1>
+        <p class="main-subtitle">Get in touch for collaborations, inquiries, or professional networking.</p>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Berkeley. All rights reserved.</p>
-    </footer>
 </body>
 </html>
