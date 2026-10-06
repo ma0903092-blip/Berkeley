@@ -18,7 +18,7 @@ body {
 }
 
 /* ==========================================
-   HEADER & NAVIGATION (Shiny Glowing Blue)
+   HEADER & NAVIGATION
    ========================================== */
 .navbar {
     background: rgba(10, 10, 10, 0.9);
@@ -62,7 +62,7 @@ body {
 }
 
 /* ==========================================
-   MAIN CONTENT CONTAINER (Centered & Clean)
+   MAIN CONTENT CONTAINER (Centered nicely across all pages)
    ========================================== */
 main, .hero-content {
     flex: 1;
@@ -92,7 +92,7 @@ p {
 }
 
 /* ==========================================
-   PROJECTS & CARDS GRID (Centered)
+   PROJECTS & CARDS GRID
    ========================================== */
 .card-container, .projects-grid {
     display: flex;
@@ -107,7 +107,7 @@ p {
     border: 1px solid rgba(30, 144, 255, 0.3);
     border-radius: 8px;
     padding: 1.5rem;
-    width: 280px;
+    width: 300px;
     text-align: left;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -129,7 +129,7 @@ p {
     font-size: 0.9rem;
 }
 
-/* All Buttons & Links (Glowing Dark Blue, ZERO Green/Yellow) */
+/* Buttons & Links */
 .card a, .btn, button[type="submit"], input[type="submit"] {
     background: linear-gradient(135deg, #1e90ff 0%, #00bfff 100%) !important;
     color: #ffffff !important;
@@ -152,7 +152,7 @@ p {
 }
 
 /* ==========================================
-   CONTACT FORM (Nicely Centered & Sized)
+   CONTACT FORM (Centered layout with left-aligned text inputs)
    ========================================== */
 form {
     display: flex;
