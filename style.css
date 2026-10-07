@@ -22,7 +22,7 @@ body {
     min-height: 100vh;
 }
 
-/* Navbar & Logo Styling */
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -108,7 +108,7 @@ body {
     margin-bottom: 3.5rem;
 }
 
-/* Card Grid */
+/* Card Grid Layout */
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -120,7 +120,10 @@ body {
     background: var(--card-bg);
     border: 1px solid var(--border-cyber);
     border-radius: 12px;
-    padding: 2.5rem 2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
@@ -133,33 +136,37 @@ body {
 }
 
 .card h2 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: var(--text-main);
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
 }
 
 .card p {
     color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
+    margin-top: 0;
     margin-bottom: 1.5rem;
 }
 
-/* Glowing Cyber Buttons */
+/* Cyber Buttons */
 .cyber-button {
     display: inline-block;
     background: linear-gradient(135deg, #0284c7, #0369a1);
     color: white;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 8px;
     font-weight: 600;
     font-size: 0.9rem;
+    text-align: center;
     text-decoration: none;
     border: 1px solid rgba(56, 189, 248, 0.4);
     box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transition: all 0.2s ease;
     cursor: pointer;
+    margin-top: auto;
 }
 
 .cyber-button:hover {
@@ -173,9 +180,7 @@ body {
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    max-width: 600px;
-    margin: 0 auto;
+    gap: 1.25rem;
     text-align: left;
 }
 
@@ -201,7 +206,7 @@ body {
 
 .contact-form textarea {
     resize: vertical;
-    min-height: 140px;
+    min-height: 130px;
 }
 
 /* Footer */
