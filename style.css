@@ -10,7 +10,7 @@
 body {
     background-color: #0b0f19;
     color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -140,14 +140,6 @@ body {
     transform: translateY(-2px);
 }
 
-.footer {
-    text-align: center;
-    padding: 30px 20px;
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: 60px; /* Increases distance from the cards */
-    font-size: 0.9rem;
-}
-
 .feature-title {
     color: #ffffff;
     font-size: 1.15rem;
@@ -155,6 +147,17 @@ body {
     margin: 0;
     letter-spacing: 0.5px;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(56, 189, 248, 0.1);
+    color: #94a3b8;
+    font-size: 0.9rem;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(10px);
 }
 
 .feature-title span {
