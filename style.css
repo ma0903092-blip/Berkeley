@@ -147,3 +147,19 @@ body {
     margin-top: 60px; /* Increases distance from the cards */
     font-size: 0.9rem;
 }
+
+.feature-title {
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.feature-title span {
+    color: #38bdf8;
+    font-weight: 700;
+    margin-right: 4px;
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
+}
