@@ -164,3 +164,39 @@ body {
     margin-right: 4px;
     text-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
 }
+
+.card form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    align-items: stretch;
+}
+
+.card input, 
+.card textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(15, 23, 42, 0.8);
+    color: #f8fafc;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    box-sizing: border-box; /* Ensures padding doesn't push it outside the box */
+}
+
+.card button.cyber-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
+    transition: all 0.3s ease;
+}
