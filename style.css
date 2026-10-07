@@ -38,28 +38,40 @@ body {
     backdrop-filter: blur(10px);
 }
 
+/* Perfect Logo Icon Styling */
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 12px;
     text-decoration: none;
 }
 
 .logo-icon {
-    background: linear-gradient(135deg, #1e3a8a, #0284c7);
-    padding: 0.6rem;
-    border-radius: 8px;
+    background: rgba(2, 132, 199, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
-    box-shadow: 0 0 10px rgba(2, 132, 199, 0.4);
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 0 12px rgba(2, 132, 199, 0.25);
+}
+
+.logo-icon svg {
+    width: 22px;
+    height: 22px;
 }
 
 .logo-text {
-    font-size: 1.3rem;
-    font-weight: 600;
     color: #ffffff;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Ensure consistent left-aligned text inside cards */
+.card-container {
+    text-align: left;
 }
 
 /* Fixed Navigation Link Spacing */
