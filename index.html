@@ -9,11 +9,13 @@
 <body>
     <nav class="navbar">
         <a href="index.html" class="logo-container">
-            <div class="logo-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <div class="logo-icon" style="background: rgba(2, 132, 199, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 8px; padding: 6px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 12px rgba(2, 132, 199, 0.4);">
+                <!-- Exact Shield with Padlock and Scan Line -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    <path d="M12 8v4"></path>
-                    <path d="M12 16h.01"></path>
+                    <rect x="9" y="11" width="6" height="5" rx="1" fill="#38bdf8" fill-opacity="0.3"></rect>
+                    <path d="M10.5 11V9a1.5 1.5 0 0 1 3 0v2"></path>
+                    <line x1="3" y1="12" x2="21" y2="12" stroke="#ffffff" stroke-width="1.5" opacity="0.9"></line>
                 </svg>
             </div>
             <span class="logo-text">Berkeley</span>
@@ -40,8 +42,7 @@
             <!-- CORE CARD -->
             <div style="background: rgba(18, 24, 38, 0.9); padding: 1.4rem; border-radius: 12px; border: 1px solid rgba(56, 189, 248, 0.2); box-shadow: 0 8px 24px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.1);">
                 <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
-                    <!-- 3D Realistic Code Icon -->
-                    <svg width="34" height="34" viewBox="0 0 36 36" fill="none" style="filter: drop-shadow(0 4px 6px rgba(2, 132, 199, 0.5));">
+                    <svg width="34" height="34" viewBox="0 0 36 36" fill="none" style="filter: drop-shadow(0 4px 6px rgba(2, 132, 199, 0.5);">
                         <defs>
                             <linearGradient id="blue3d" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
                                 <stop offset="0%" stop-color="#38bdf8"/>
@@ -55,12 +56,11 @@
                         </defs>
                         <rect x="2" y="2" width="32" height="32" rx="8" fill="url(#blue3d)" stroke="#7dd3fc" stroke-width="1"/>
                         <rect x="2" y="2" width="32" height="16" rx="8" fill="url(#gloss)"/>
-                        <!-- 3D Brackets -->
                         <path d="M12 11L7 18L12 25" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M24 11L29 18L24 25" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M21 9L15 27" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
                     </svg>
-                    <h4 style="color: #38bdf8; font-size: 1rem; font-family: 'Source Code Pro', monospace; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.6); font-weight: 600;">// CORE</h4>
+                    <h4 style="color: #38bdf8; font-size: 1rem; font-family: monospace; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.6); font-weight: 600;">// CORE</h4>
                 </div>
                 <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5;">Full-stack web engineering & scalable design.</p>
             </div>
@@ -68,15 +68,13 @@
             <!-- ANALYZE CARD -->
             <div style="background: rgba(18, 24, 38, 0.9); padding: 1.4rem; border-radius: 12px; border: 1px solid rgba(56, 189, 248, 0.2); box-shadow: 0 8px 24px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.1);">
                 <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
-                    <!-- 3D Realistic Magnifying Glass / Lens Icon -->
-                    <svg width="34" height="34" viewBox="0 0 36 36" fill="none" style="filter: drop-shadow(0 4px 6px rgba(2, 132, 199, 0.5));">
+                    <svg width="34" height="34" viewBox="0 0 36 36" fill="none" style="filter: drop-shadow(0 4px 6px rgba(2, 132, 199, 0.5);">
                         <rect x="2" y="2" width="32" height="32" rx="8" fill="url(#blue3d)" stroke="#7dd3fc" stroke-width="1"/>
                         <rect x="2" y="2" width="32" height="16" rx="8" fill="url(#gloss)"/>
-                        <!-- 3D Lens -->
                         <circle cx="15" cy="15" r="6" stroke="#ffffff" stroke-width="2.5" fill="rgba(255,255,255,0.15)"/>
                         <path d="M19.5 19.5L26 26" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
                     </svg>
-                    <h4 style="color: #38bdf8; font-size: 1rem; font-family: 'Source Code Pro', monospace; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.6); font-weight: 600;">// ANALYZE</h4>
+                    <h4 style="color: #38bdf8; font-size: 1rem; font-family: monospace; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.6); font-weight: 600;">// ANALYZE</h4>
                 </div>
                 <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5;">Digital forensics & cyber threat investigation.</p>
             </div>
@@ -84,16 +82,14 @@
             <!-- SECURE CARD -->
             <div style="background: rgba(18, 24, 38, 0.9); padding: 1.4rem; border-radius: 12px; border: 1px solid rgba(56, 189, 248, 0.2); box-shadow: 0 8px 24px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.1);">
                 <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
-                    <!-- 3D Realistic Padlock Icon -->
-                    <svg width="34" height="34" viewBox="0 0 36 36" fill="none" style="filter: drop-shadow(0 4px 6px rgba(2, 132, 199, 0.5));">
+                    <svg width="34" height="34" viewBox="0 0 36 36" fill="none" style="filter: drop-shadow(0 4px 6px rgba(2, 132, 199, 0.5);">
                         <rect x="2" y="2" width="32" height="32" rx="8" fill="url(#blue3d)" stroke="#7dd3fc" stroke-width="1"/>
                         <rect x="2" y="2" width="32" height="16" rx="8" fill="url(#gloss)"/>
-                        <!-- 3D Padlock -->
                         <rect x="10" y="16" width="16" height="12" rx="2" fill="#ffffff" fill-opacity="0.9"/>
                         <path d="M13 16V12C13 9.79086 14.7909 8 17 8C19.2091 8 21 9.79086 21 12V16" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
                         <circle cx="18" cy="21" r="1.5" fill="#0284c7"/>
                     </svg>
-                    <h4 style="color: #38bdf8; font-size: 1rem; font-family: 'Source Code Pro', monospace; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.6); font-weight: 600;">// SECURE</h4>
+                    <h4 style="color: #38bdf8; font-size: 1rem; font-family: monospace; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.6); font-weight: 600;">// SECURE</h4>
                 </div>
                 <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5;">System hardening & vulnerability mitigation.</p>
             </div>
