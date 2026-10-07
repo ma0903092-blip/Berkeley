@@ -1,35 +1,52 @@
-/* Perfect Logo Icon Styling */
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkeley | About Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo-container">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <rect x="9" y="11" width="6" height="5" rx="1" fill="#38bdf8" fill-opacity="0.3"></rect>
+                    <path d="M10.5 11V9a1.5 1.5 0 0 1 3 0v2"></path>
+                    <line x1="3" y1="12" x2="21" y2="12" stroke="#ffffff" stroke-width="1.5" opacity="0.4"></line>
+                </svg>
+            </div>
+            <span class="logo-text">Berkeley</span>
+        </a>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
 
-.logo-icon {
-    background: rgba(2, 132, 199, 0.15);
-    border: 1px solid rgba(56, 189, 248, 0.4);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    box-shadow: 0 0 12px rgba(2, 132, 199, 0.25);
-}
+    <main class="main-container">
+        <h1 class="main-title">About Me</h1>
+        <p class="main-subtitle">Bridging the gap between secure web architecture and digital investigations.</p>
+        <div class="card-container">
+            <p style="color: #cbd5e1; margin-bottom: 1rem;">Hello! I'm Berkeley, a technologist with a deep passion for web engineering and cyber crime investigation. My work explores how digital systems are built, secured, and analyzed when security boundaries are tested.</p>
+            <p style="color: #cbd5e1; margin-bottom: 1.5rem;">With a strong foundation in both software development and analytical problem-solving, I focus on building robust web applications while understanding the core principles of digital forensics and threat mitigation.</p>
+            <h3 style="color: #38bdf8; margin-bottom: 0.75rem;">Core Focus Areas:</h3>
+            <ul style="color: #94a3b8; padding-left: 1.25rem; line-height: 1.8;">
+                <li>Full-Stack Web Engineering & UI Design</li>
+                <li>Cyber Crime Investigation & Digital Forensics</li>
+                <li>System Administration & Security Hardening</li>
+            </ul>
+        </div>
+    </main>
 
-.logo-icon svg {
-    width: 22px;
-    height: 22px;
-}
+    <footer class="footer">
+        <p>&copy; 2026 Mohammed Ali. All rights reserved.</p>
+    </footer>
 
-.logo-text {
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-/* Ensure consistent left-aligned text inside cards */
-.card-container {
-    text-align: left;
-}
+    <script src="script.js"></script>
+</body>
+</html>
