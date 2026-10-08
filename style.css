@@ -9,16 +9,13 @@
 }
 
 body {
-    background-color: var(--bg-deep);
-    background-image: 
-        radial-gradient(circle at 50% 15%, rgba(2, 132, 199, 0.15) 0%, transparent 65%),
-        linear-gradient(rgba(56, 189, 248, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(56, 189, 248, 0.02) 1px, transparent 1px);
-    background-size: 100% 100%, 40px 40px, 40px 40px;
-    color: var(--text-main);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.92)), url('your-image-filename.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #f3f4f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 0;
     min-height: 100vh;
 }
 
@@ -120,7 +117,7 @@ body {
     background: var(--card-bg);
     border: 1px solid var(--border-cyber);
     border-radius: 12px;
-    padding: 1.75rem 1.5rem;
+    padding: 1.5rem 1.25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -139,23 +136,24 @@ body {
 .card-icon {
     display: flex;
     justify-content: center;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem; /* Tightened gap below icon */
 }
 
 .card h2 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--text-main);
     margin-top: 0;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.35rem; /* Tightened gap below title */
     letter-spacing: 0.5px;
-}
+    text-align: center;
 
 .card p {
     color: var(--text-muted);
-    font-size: 0.92rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    line-height: 1.45;
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 /* Cyber Buttons */
