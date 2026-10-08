@@ -1,13 +1,3 @@
-:root {
-    --bg-deep: #050b14;
-    --card-bg: rgba(11, 19, 33, 0.85);
-    --neon-cyan: #38bdf8;
-    --neon-glow: rgba(56, 189, 248, 0.3);
-    --border-cyber: rgba(56, 189, 248, 0.25);
-    --text-main: #f3f4f6;
-    --text-muted: #9ca3af;
-}
-
 body {
     background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.94)), url('profile.jpg');
     background-size: cover;
@@ -17,95 +7,30 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    margin: 25px auto;
-    padding: 16px 30px;
-    background: rgba(11, 19, 33, 0.9);
-    border: 1px solid var(--border-cyber);
-    border-radius: 12px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(56, 189, 248, 0.15);
+.main-container {
+    flex: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    width: 100%;
     box-sizing: border-box;
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
-}
-
-.logo-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-}
-
-.logo-icon svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 0 6px var(--neon-cyan));
-}
-
-.logo-text {
-    color: var(--text-main);
-    font-weight: 700;
-    font-size: 1.3rem;
-    letter-spacing: 0.5px;
-}
-
-.links {
-    display: flex;
-    align-items: center;
-}
-
-.links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    margin-left: 2rem;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.links a:hover, .links a.active {
-    color: var(--neon-cyan);
-    text-shadow: 0 0 10px var(--neon-glow);
-}
-
-/* Main Layout */
-.main-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
+/* Global Footer Fix - Perfectly Centered */
+.footer {
     text-align: center;
+    padding: 2rem 0;
+    color: #64748b;
+    font-size: 0.88rem;
+    width: 100%;
+    margin-top: auto;
 }
 
-.main-title {
-    font-size: 2.8rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-    color: var(--text-main);
-    text-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
-}
-
-.main-subtitle {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    margin-bottom: 3.5rem;
-}
-
-/* Card Grid Layout */
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -126,94 +51,24 @@ body {
     box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    border-color: var(--neon-cyan);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px var(--neon-glow);
-}
-
-/* Tighter spacing for home cards */
-.card-icon {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0.5rem; /* Tightened gap below icon */
-}
-
-.card h2 {
-    font-size: 1.05rem;
-    color: var(--text-main);
-    margin-top: 0;
-    margin-bottom: 0.35rem; /* Tightened gap below title */
-    letter-spacing: 0.5px;
-    text-align: center;
-
-.card p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.45;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
-
-/* Cyber Buttons */
+/* Modern Shiny, Glowing, Glossy Cyber Button */
 .cyber-button {
-    background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(3, 105, 161, 0.3));
-    border: 1px solid rgba(56, 189, 248, 0.6);
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(3, 105, 161, 0.4));
+    border: 1px solid rgba(56, 189, 248, 0.8);
     color: #38bdf8;
-    padding: 0.5rem 1.2rem;
+    padding: 0.6rem 1.5rem;
     border-radius: 8px;
     text-decoration: none;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4), inset 0 0 10px rgba(56, 189, 248, 0.2);
     display: inline-block;
-    transition: 0.2s;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(56, 189, 248, 0.5);
 }
 
 .cyber-button:hover {
-    background: linear-gradient(135deg, rgba(56, 189, 248, 0.4), rgba(3, 105, 161, 0.5));
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
-}
-
-/* Contact Form */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    text-align: left;
-}
-
-.contact-form input, 
-.contact-form textarea {
-    width: 100%;
-    padding: 14px 18px;
-    background: rgba(5, 11, 22, 0.9);
-    border: 1px solid var(--border-cyber);
-    border-radius: 8px;
-    color: var(--text-main);
-    font-size: 1rem;
-    box-sizing: border-box;
-    outline: none;
-    transition: all 0.2s ease;
-}
-
-.contact-form input:focus, 
-.contact-form textarea:focus {
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 12px var(--neon-glow);
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 130px;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 2rem 0;
-    color: #64748b;
-    font-size: 0.88rem;
-    width: 100%;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.45), rgba(3, 105, 161, 0.6));
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.8), inset 0 0 15px rgba(56, 189, 248, 0.4);
+    color: #ffffff;
 }
