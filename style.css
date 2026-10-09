@@ -12,14 +12,18 @@ body {
     justify-content: space-between;
 }
 
-/* Navbar Layout */
+/* Restored Navbar Container Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 3rem;
+    padding: 1.2rem 3rem;
     width: 100%;
     box-sizing: border-box;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .logo-container {
