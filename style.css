@@ -106,7 +106,7 @@ body {
 .card {
     background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(10px);
-    padding: 1.8rem 1.5rem;
+    padding: 2.2rem 1.8rem;
     border-radius: 12px;
     border: 1.5px solid rgba(56, 189, 248, 0.4);
     display: flex;
