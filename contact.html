@@ -5,6 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berkeley | Contact</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Cyber Genius Glowing CSS by Berkeley */
+
+        /* 1. The main form container glow (when cursor is NEAR) */
+        .glowing-contact-container {
+            max-width: 540px;
+            margin: 0 auto;
+            background: rgba(15, 23, 42, 0.85); /* Slightly darker for better contrast */
+            backdrop-filter: blur(12px);
+            padding: 2.5rem;
+            border-radius: 16px;
+            
+            /* Initial State (Dormant) */
+            border: 1.5px solid rgba(56, 189, 248, 0.3); /* Subtle blue boundary */
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.1); /* Very faint soft glow */
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Smooth pro transition */
+            position: relative;
+        }
+
+        /* The dynamic hover activation */
+        .glowing-contact-container:hover {
+            border-color: #38bdf8; /* Full bright cyan border */
+            box-shadow: 0 10px 40px rgba(56, 189, 248, 0.35), /* Outer bloom glow */
+                        inset 0 0 20px rgba(56, 189, 248, 0.15); /* Internal subtle gloss */
+            transform: translateY(-4px); /* Slight elevation for depth */
+        }
+
+        /* 2. Stylizing input fields for interaction */
+        .cyber-input {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background: rgba(3, 7, 18, 0.7);
+            
+            /* Inputs Initial State */
+            border: 1.5px solid rgba(56, 189, 248, 0.3); /* Subtle border matching dormant container */
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 0.95rem;
+            outline: none; /* Crucial for custom focus style */
+            transition: all 0.3s ease-in-out;
+            box-sizing: border-box; /* Fixes padding issues */
+        }
+
+        /* 3. The focused field glow (when cursor is INSIDE) */
+        .cyber-input:focus {
+            border-color: #38bdf8; /* Highlights border */
+            background: rgba(15, 23, 42, 1); /* Direct clear backdrop */
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.5), /* Focus bloom */
+                        inset 0 0 8px rgba(56, 189, 248, 0.2); /* Internal focus depth */
+        }
+
+        /* Make textarea resize handle match the cyber theme */
+        textarea.cyber-input {
+            resize: vertical;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -28,10 +84,11 @@
     </nav>
 
     <main class="main-container">
-        <h1 class="main-title" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; text-align: center; letter-spacing: 0.5px;">Decrypt Comms</h1>
-        <p class="main-subtitle" style="text-align: center; margin-bottom: 2.2rem; color: #94a3b8; font-size: 1rem;">Establish a secure transmission channel for professional collaborations or inquiries.</p>
+        <h1 class="main-title" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; text-align: center;">Decrypt Comms</h1>
+        <p class="main-subtitle" style="text-align: center; margin-bottom: 2.5rem; color: #94a3b8; font-size: 1rem;">Establish a secure transmission channel for professional collaborations or inquiries.</p>
 
-        <div style="max-width: 540px; margin: 0 auto; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); padding: 2.5rem; border-radius: 16px; border: 1.5px solid rgba(56, 189, 248, 0.35); box-shadow: 0 0 30px rgba(56, 189, 248, 0.15), inset 0 0 15px rgba(56, 189, 248, 0.05);">
+        <!-- Applying the new glowing-contact-container class -->
+        <div class="glowing-contact-container">
             <div style="text-align: center; margin-bottom: 2rem;">
                 <h3 style="color: #38bdf8; letter-spacing: 2px; font-size: 1.05rem; font-weight: 600; margin: 0; text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);">SECURE TRANSMISSION GATEWAY</h3>
             </div>
@@ -39,12 +96,12 @@
             <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 1.4rem;">
                 <div>
                     <label style="display: block; color: #cbd5e1; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; letter-spacing: 1px;">YOUR EMAIL ADDRESS</label>
-                    <input type="email" placeholder="name@domain.com" required style="width: 100%; padding: 0.85rem 1rem; background: rgba(3, 7, 18, 0.7); border: 1.5px solid rgba(56, 189, 248, 0.3); border-radius: 8px; color: #ffffff; font-size: 0.95rem; outline: none; transition: all 0.3s ease; box-sizing: border-box;" onfocus="this.style.borderColor='#38bdf8'; this.style.boxShadow='0 0 12px rgba(56, 189, 248, 0.4)'" onblur="this.style.borderColor='rgba(56, 189, 248, 0.3)'; this.style.boxShadow='none'">
+                    <input type="email" placeholder="name@domain.com" required class="cyber-input">
                 </div>
 
                 <div>
                     <label style="display: block; color: #cbd5e1; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; letter-spacing: 1px;">SECURE MESSAGE</label>
-                    <textarea rows="4" placeholder="Enter your transmission content..." required style="width: 100%; padding: 0.85rem 1rem; background: rgba(3, 7, 18, 0.7); border: 1.5px solid rgba(56, 189, 248, 0.3); border-radius: 8px; color: #ffffff; font-size: 0.95rem; outline: none; resize: vertical; transition: all 0.3s ease; box-sizing: border-box;" onfocus="this.style.borderColor='#38bdf8'; this.style.boxShadow='0 0 12px rgba(56, 189, 248, 0.4)'" onblur="this.style.borderColor='rgba(56, 189, 248, 0.3)'; this.style.boxShadow='none'"></textarea>
+                    <textarea rows="4" placeholder="Enter your transmission content..." required class="cyber-input"></textarea>
                 </div>
 
                 <div style="text-align: center; margin-top: 0.6rem;">
