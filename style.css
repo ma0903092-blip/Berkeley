@@ -17,13 +17,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 3rem;
+    padding: 1.2rem 5%;
     width: 100%;
     box-sizing: border-box;
-    background: rgba(15, 23, 42, 0.75);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(56, 189, 248, 0.2);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 100;
 }
 
 .logo-container {
@@ -60,13 +58,14 @@ body {
 .links a {
     color: #94a3b8;
     text-decoration: none;
-    font-size: 0.95rem;
     font-weight: 500;
-    transition: color 0.2s;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
 .links a:hover, .links a.active {
     color: #38bdf8;
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
 }
 
 /* Main Layout & Center Alignments */
