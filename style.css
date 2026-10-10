@@ -78,7 +78,7 @@ body {
     width: 100%;
     box-sizing: border-box;
     text-align: center;
-    padding: 2rem 5% 1rem 5%;
+    padding: 2rem 5% 2.5rem 5%;
 }
 
 .main-title {
@@ -171,10 +171,11 @@ html, body {
 
 .site-footer {
     text-align: center;
-    padding: 0.5rem 0;
+    padding: 1.5rem 0;
     color: #94a3b8;
     font-size: 0.9rem;
-    margin-top: 0.2rem; /* Pulls it right up against the cards */
+    margin-top: 2rem;
+    border-top: 1px solid rgba(56, 189, 248, 0.15);
 }
 
 /* 1. Navbar Logo Box Glowing Hover Interaction */
