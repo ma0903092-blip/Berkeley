@@ -17,11 +17,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 5%;
+    padding: 1rem 5%;
     width: 100%;
+    background: rgba(15, 23, 42, 0.85); /* Rich dark translucent backdrop */
+    backdrop-filter: blur(12px); /* Frosted glass effect */
+    border-bottom: 1.5px solid rgba(56, 189, 248, 0.3); /* Subtle glowing bottom border */
+    box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15); /* Soft drop shadow */
     box-sizing: border-box;
-    position: relative;
-    z-index: 100;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo-container {
@@ -50,12 +55,12 @@ body {
     text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
 }
 
-.links {
+.navbar .links {
     display: flex;
     gap: 2rem;
 }
 
-.links a {
+.navbar .links a {
     color: #94a3b8;
     text-decoration: none;
     font-weight: 500;
@@ -63,7 +68,7 @@ body {
     transition: color 0.3s ease;
 }
 
-.links a:hover, .links a.active {
+.navbar .links a:hover {
     color: #38bdf8;
     text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
 }
