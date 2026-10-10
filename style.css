@@ -171,10 +171,10 @@ html, body {
 
 .site-footer {
     text-align: center;
-    padding: 1rem 0 1.5rem 0;
+    padding: 0.5rem 0;
     color: #94a3b8;
     font-size: 0.9rem;
-    margin-top: 1rem;
+    margin-top: 0.2rem; /* Pulls it right up against the cards */
 }
 
 /* 1. Navbar Logo Box Glowing Hover Interaction */
