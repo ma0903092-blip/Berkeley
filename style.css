@@ -160,6 +160,8 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    background-color: #030712;
+    color: #f3f4f6;
 }
 
 .main-container {
@@ -168,9 +170,8 @@ html, body {
 
 .site-footer {
     text-align: center;
-    padding: 1.5rem 0 2rem 0;
+    padding: 1.5rem 0;
     color: #94a3b8;
     font-size: 0.9rem;
-    margin-top: 2rem;
-    clear: both;
+    margin-top: 1.5rem;
 }
