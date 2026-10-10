@@ -6,7 +6,21 @@
     <title>Berkeley | Web Developer & Cyber Operations</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Cyber Genius Card Glow Effects */
+        /* Tighter layout structure to bring footer closer */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #030712;
+            color: #f3f4f6;
+        }
+        .main-container {
+            flex: 0 0 auto;
+            padding-bottom: 1.5rem;
+        }
+
+        /* Realistic Cyber Card Internal Glowing Effect */
         .home-card {
             background: rgba(15, 23, 42, 0.75);
             backdrop-filter: blur(12px);
@@ -17,19 +31,23 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.08);
             transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
+        /* When cursor passes over or lands inside the box: glowing interior & border bloom */
         .home-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             border-color: #38bdf8;
-            background: rgba(15, 23, 42, 0.95);
-            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.4), inset 0 0 20px rgba(56, 189, 248, 0.18);
+            background: radial-gradient(circle at center, rgba(56, 189, 248, 0.15) 0%, rgba(15, 23, 42, 0.95) 80%);
+            box-shadow: 0 0 35px rgba(56, 189, 248, 0.4), inset 0 0 25px rgba(56, 189, 248, 0.25);
         }
+
+        /* Icon box intense internal reaction on hover */
         .home-card:hover .icon-box {
             border-color: #38bdf8;
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.7), inset 0 0 15px rgba(56, 189, 248, 0.5);
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, rgba(3, 105, 161, 0.25) 100%);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.8), inset 0 0 15px rgba(56, 189, 248, 0.5);
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, rgba(3, 105, 161, 0.3) 100%);
         }
     </style>
 </head>
@@ -60,7 +78,7 @@
         <h1 class="main-title" style="font-size: 2.5rem; margin-top: 0; margin-bottom: 0.8rem;">Full-Spectrum Cyber Operations</h1>
         <p class="main-subtitle">Architecting secure full-stack applications, executing ethical penetration testing, and conducting advanced cyber criminology investigations.</p>
 
-        <div style="text-align: center; margin-bottom: 2.5rem;">
+        <div style="text-align: center; margin-bottom: 2rem;">
             <a href="projects.html" style="background: #0284c7; color: #ffffff; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; box-shadow: 0 0 15px rgba(2, 132, 199, 0.5); transition: all 0.3s ease;">View My Projects</a>
         </div>
 
@@ -104,7 +122,7 @@
         </div>
     </main>
 
-    <footer class="site-footer" style="text-align: center; padding: 1.5rem 0; color: #94a3b8; font-size: 0.9rem; margin-top: 2rem;">
+    <footer class="site-footer" style="text-align: center; padding: 1.2rem 0; color: #94a3b8; font-size: 0.9rem; margin-top: 2rem;">
         <p style="margin: 0;">&copy; 2026 Berkeley. All Rights Reserved.</p>
     </footer>
 </body>
