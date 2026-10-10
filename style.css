@@ -155,23 +155,74 @@ body {
     width: 100%;
     margin-top: auto;
 }
+
+/* Layout & Tight Footer Spacing Fix */
 html, body {
-    min-height: 100vh;
     margin: 0;
-    display: flex;
-    flex-direction: column;
+    padding: 0;
     background-color: #030712;
     color: #f3f4f6;
 }
 
 .main-container {
-    flex: 1;
+    padding-bottom: 1rem !important;
 }
 
 .site-footer {
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 1rem 0 2rem 0 !important;
     color: #94a3b8;
     font-size: 0.9rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem !important;
+}
+
+/* 1. Navbar Logo Box Glowing Hover Interaction */
+.logo-box {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1.5px solid rgba(56, 189, 248, 0.4);
+    padding: 0.4rem 0.9rem;
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.7);
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-box:hover {
+    border-color: #38bdf8;
+    background: radial-gradient(circle at center, rgba(56, 189, 248, 0.2) 0%, rgba(15, 23, 42, 0.9) 100%);
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.6), inset 0 0 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-2px);
+}
+
+/* 2. Feature Cards (Core, Analyze, Secure) Glowing Hover Interaction */
+.card {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(56, 189, 248, 0.35);
+    border-radius: 16px;
+    padding: 2.2rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.08);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #38bdf8;
+    background: radial-gradient(circle at center, rgba(56, 189, 248, 0.18) 0%, rgba(15, 23, 42, 0.95) 80%);
+    box-shadow: 0 0 35px rgba(56, 189, 248, 0.4), inset 0 0 25px rgba(56, 189, 248, 0.25);
+}
+
+.card:hover .icon-box {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.8), inset 0 0 15px rgba(56, 189, 248, 0.5) !important;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, rgba(3, 105, 161, 0.3) 100%) !important;
 }
