@@ -392,15 +392,13 @@ header nav a.active {
     cursor: pointer;
 }
 
-/* Remove bright glow and soften border for To-Do List card */
+/* Retain matching cyan border while removing the heavy outer glow */
 .todo-card {
-    box-shadow: none !important; /* Removes outer glowing drop-shadow */
-    border: 1px solid rgba(255, 255, 255, 0.15) !important; /* Soft, non-intrusive border */
-    background: rgba(15, 23, 42, 0.6) !important; /* Darker, comfortable background */
+    box-shadow: none !important; /* Removes outer drop-shadow glow */
+    border: 1px solid #38bdf8 !important; /* Keeps exact blue border line */
 }
 
-/* Optional: Soften border on hover so it doesn't trigger a heavy glow */
 .todo-card:hover {
     box-shadow: none !important;
-    border-color: rgba(56, 189, 248, 0.3) !important;
+    border: 1px solid #38bdf8 !important;
 }
