@@ -340,3 +340,54 @@ header nav a.active {
         padding-right: 1rem;
     }
 }
+
+/* To-Do List Styles */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    flex: 1; /* Makes input take up remaining space */
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #1a1a2e;
+    color: white;
+}
+
+.btn-add {
+    background: #4ecca3;
+    color: #16213e;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.task-item {
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    background: #e94560;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
