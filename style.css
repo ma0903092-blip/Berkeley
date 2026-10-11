@@ -455,3 +455,11 @@ header nav a.active {
     box-shadow: none !important;
     border: 1px solid #38bdf8 !important;
 }
+
+/* Task Counter Style */
+.task-counter {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    text-align: center;
+}
