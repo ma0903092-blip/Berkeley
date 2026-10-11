@@ -93,15 +93,15 @@
                 <h3 style="color: #38bdf8; letter-spacing: 2px; font-size: 1.05rem; font-weight: 600; margin: 0; text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);">SECURE TRANSMISSION GATEWAY</h3>
             </div>
             
-            <form onsubmit="event.preventDefault(); alert('Transmission Received. Thank you!'); this.reset();">
+            <form action="https://formspree.io/f/mljgnvdr" method="POST">
                 <div>
                     <label style="display: block; color: #cbd5e1; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; letter-spacing: 1px;">YOUR EMAIL ADDRESS</label>
-                    <input type="email" placeholder="name@domain.com" required class="cyber-input">
+                    <input type="email" name="email" placeholder="name@domain.com" required class="cyber-input">
                 </div>
 
                 <div>
                     <label style="display: block; color: #cbd5e1; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; letter-spacing: 1px;">SECURE MESSAGE</label>
-                    <textarea rows="4" placeholder="Enter your transmission content..." required class="cyber-input"></textarea>
+                    <textarea name="message" rows="4" placeholder="Enter your transmission content..." required class="cyber-input"></textarea>
                 </div>
 
                 <div style="text-align: center; margin-top: 0.6rem;">
