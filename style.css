@@ -246,6 +246,17 @@ html, body {
     background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, rgba(3, 105, 161, 0.3) 100%) !important;
 }
 
+/* Homepage Feature Cards Paragraph Alignment */
+.card p {
+    text-align: center !important;
+}
+
+/* Projects Page Paragraph Alignment */
+.projects-grid .card p,
+.project-card p {
+    text-align: left !important;
+}
+
 input, textarea {
     font-family: inherit;
     font-size: 0.95rem;
