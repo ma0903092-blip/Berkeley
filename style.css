@@ -194,6 +194,17 @@ html, body {
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.logo-box .brand-icon {
+    width: 28px !important;
+    height: 28px !important;
+    max-width: 28px !important;
+    max-height: 28px !important;
+    object-fit: contain !important;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .logo-box:hover {
     border-color: #38bdf8;
     background: radial-gradient(circle at center, rgba(56, 189, 248, 0.2) 0%, rgba(15, 23, 42, 0.9) 100%);
