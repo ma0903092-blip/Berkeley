@@ -149,3 +149,10 @@ function removeTask(id) {
     tasks = tasks.filter(task => task.id !== id);
     localStorage.setItem('myTasks', JSON.stringify(tasks));
 }
+
+function clearCompletedTasks() {
+    let tasks = getTasksFromLocalStorage();
+    tasks = tasks.filter(t => !t.completed);
+    localStorage.setItem('myTasks', JSON.stringify(tasks));
+    loadTasks();
+}

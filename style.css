@@ -463,3 +463,37 @@ header nav a.active {
     margin-top: 15px;
     text-align: center;
 }
+
+/* To-Do Footer Layout */
+.todo-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.task-counter {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-top: 0;
+}
+
+/* Clear Completed Button Style */
+.btn-clear {
+    background: transparent;
+    color: #94a3b8;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+}
+
+.btn-clear:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.3);
+}
