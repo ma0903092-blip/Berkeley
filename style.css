@@ -402,3 +402,56 @@ header nav a.active {
     box-shadow: none !important;
     border: 1px solid #38bdf8 !important;
 }
+
+/* Filter Buttons Styles */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.filter-btn {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.filter-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.filter-btn.active {
+    background: #4ecca3;
+    color: #16213e;
+    font-weight: bold;
+}
+
+.task-item.completed span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.edit-input {
+    background: #1a1a2e;
+    color: white;
+    border: 1px solid #4ecca3;
+    padding: 5px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+/* Maintain custom cyan border without harsh outer glow */
+.todo-card {
+    box-shadow: none !important;
+    border: 1px solid #38bdf8 !important;
+}
+
+.todo-card:hover {
+    box-shadow: none !important;
+    border: 1px solid #38bdf8 !important;
+}
