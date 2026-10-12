@@ -157,25 +157,39 @@ function clearCompletedTasks() {
     loadTasks();
 }
 
-function handleContactSubmit(event) {
-    // Prevent the default form submission page reload immediately
-    event.preventDefault();
+async function handleContactSubmit(event) {
+    event.preventDefault(); // Stop normal redirect so we can show our message
 
     const form = document.getElementById('contact-form');
     const successBanner = document.getElementById('formSuccessMessage');
+    const formData = new FormData(form);
 
-    // Show the success banner
-    if (successBanner) {
-        successBanner.style.display = 'block';
-    }
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
 
-    // Reset the form fields
-    form.reset();
+        if (response.ok) {
+            // Show the green success banner
+            if (successBanner) {
+                successBanner.style.display = 'block';
+            }
+            form.reset();
 
-    // Hide the success message after 5 seconds and allow Formspree submission if needed
-    setTimeout(() => {
-        if (successBanner) {
-            successBanner.style.display = 'none';
+            // Hide the success message after 5 seconds
+            setTimeout(() => {
+                if (successBanner) {
+                    successBanner.style.display = 'none';
+                }
+            }, 5000);
+        } else {
+            alert("Oops! There was a problem submitting your form.");
         }
-    }, 5000);
+    } catch (error) {
+        alert("Oops! There was a connection error.");
+    }
 }
