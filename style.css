@@ -498,3 +498,15 @@ header nav a.active {
     color: #ef4444;
     border-color: rgba(239, 68, 68, 0.3);
 }
+
+/* Matrix Rain Background Canvas */
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Keeps it strictly in the background behind all content */
+    opacity: 0.15; /* Subtle and non-distracting */
+    pointer-events: none;
+}
