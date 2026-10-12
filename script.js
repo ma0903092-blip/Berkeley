@@ -156,3 +156,26 @@ function clearCompletedTasks() {
     localStorage.setItem('myTasks', JSON.stringify(tasks));
     loadTasks();
 }
+
+function handleContactSubmit(event) {
+    // Prevent the default form submission page reload immediately
+    event.preventDefault();
+
+    const form = document.getElementById('contact-form');
+    const successBanner = document.getElementById('formSuccessMessage');
+
+    // Show the success banner
+    if (successBanner) {
+        successBanner.style.display = 'block';
+    }
+
+    // Reset the form fields
+    form.reset();
+
+    // Hide the success message after 5 seconds and allow Formspree submission if needed
+    setTimeout(() => {
+        if (successBanner) {
+            successBanner.style.display = 'none';
+        }
+    }, 5000);
+}

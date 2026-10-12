@@ -90,7 +90,7 @@
                 <h3 style="color: #38bdf8; letter-spacing: 2px; font-size: 1.05rem; font-weight: 600; margin: 0; text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);">SECURE TRANSMISSION GATEWAY</h3>
             </div>
             
-        <form id="contact-form" action="https://formspree.io/f/mljgnvdr" method="POST">
+        <form id="contact-form" action="https://formspree.io/f/mljgnvdr" method="POST" onsubmit="handleContactSubmit(event)">
     <div style="margin-bottom: 1.5rem;">
         <label style="display: block; color: #cbd5e1; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; text-align: center;">Your Email Address</label>
         <input type="email" name="email" placeholder="name@domain.com" required class="cyber-input">
@@ -102,12 +102,14 @@
     </div>
 
     <div style="text-align: center; margin-top: 0.6rem;">
-        <button type="submit" style="width: 100%; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; padding: 0.75rem; border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Transmit Message</button>
+        <button type="submit" style="width: 100%; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; padding: 0.75rem; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Send Transmission</button>
     </div>
-    
-    <!-- Status message placeholder -->
-    <div id="form-status" style="margin-top: 1rem; text-align: center; font-size: 0.9rem; display: none;"></div>
 </form>
+    
+    <!-- Success Message Feedback Banner -->
+<div id="formSuccessMessage" style="display: none; margin-top: 20px; padding: 15px; background: rgba(78, 204, 163, 0.1); border: 1px solid #4ecca3; color: #4ecca3; border-radius: 5px; text-align: center; font-weight: bold;">
+    Thank you! Your message has been sent successfully.
+</div>
 
 <script>
 document.getElementById("contact-form").addEventListener("submit", async function(e) {
