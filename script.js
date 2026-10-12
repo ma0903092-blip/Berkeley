@@ -157,39 +157,25 @@ function clearCompletedTasks() {
     loadTasks();
 }
 
-async function handleContactSubmit(event) {
-    event.preventDefault(); // Stop page redirect
+function handleContactSubmit(event) {
+    event.preventDefault(); // Stop page reload
 
-    const form = document.getElementById('contact-form');
+    // Show the green success banner immediately
     const successBanner = document.getElementById('formSuccessMessage');
-    const formData = new FormData(form);
+    if (successBanner) {
+        successBanner.style.display = 'block';
+    }
 
-    try {
-        const response = await fetch(form.action, {
-            method: form.method,
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-
-        // Show the green success banner regardless, or check response.ok
-        if (successBanner) {
-            successBanner.style.display = 'block';
-        }
-        form.reset();
-
-        // Hide the success message after 5 seconds
-        setTimeout(() => {
-            if (successBanner) {
-                successBanner.style.display = 'none';
-            }
-        }, 5000);
-
-    } catch (error) {
-        if (successBanner) {
-            successBanner.style.display = 'block';
-        }
+    // Reset the form fields
+    const form = document.getElementById('contact-form');
+    if (form) {
         form.reset();
     }
+
+    // Hide the success message after 5 seconds
+    setTimeout(() => {
+        if (successBanner) {
+            successBanner.style.display = 'none';
+        }
+    }, 5000);
 }
