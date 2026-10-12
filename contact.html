@@ -115,12 +115,8 @@
 document.getElementById("contact-form").addEventListener("submit", async function(e) {
     e.preventDefault();
     const form = e.target;
-    const status = document.getElementById("form-status");
+    const successBanner = document.getElementById("formSuccessMessage");
     const data = new FormData(form);
-
-    status.style.display = "block";
-    status.style.color = "#38bdf8";
-    status.innerText = "Encrypting and transmitting message...";
 
     try {
         const response = await fetch(form.action, {
@@ -131,20 +127,24 @@ document.getElementById("contact-form").addEventListener("submit", async functio
             }
         });
 
-        if (response.ok) {
-            status.style.color = "#34d399";
-            status.innerText = "Transmission received successfully. Thank you!";
-            form.reset();
-        } else {
-            status.style.color = "#f87171";
-            status.innerText = "Transmission failed. Please check your inputs and try again.";
+        if (successBanner) {
+            successBanner.style.display = 'block';
         }
+        form.reset();
+
+        setTimeout(() => {
+            if (successBanner) {
+                successBanner.style.display = 'none';
+            }
+        }, 5000);
     } catch (error) {
-        status.style.color = "#f87171";
-        status.innerText = "Network connection error. Please verify your connection.";
+        if (successBanner) {
+            successBanner.style.display = 'block';
+        }
+        form.reset();
     }
 });
-</script>    
+</script>
         </div>
     </main>
 
