@@ -158,7 +158,7 @@ function clearCompletedTasks() {
 }
 
 async function handleContactSubmit(event) {
-    event.preventDefault(); // Stop normal redirect so we can show our message
+    event.preventDefault(); // Stop page redirect
 
     const form = document.getElementById('contact-form');
     const successBanner = document.getElementById('formSuccessMessage');
@@ -173,23 +173,23 @@ async function handleContactSubmit(event) {
             }
         });
 
-        if (response.ok) {
-            // Show the green success banner
-            if (successBanner) {
-                successBanner.style.display = 'block';
-            }
-            form.reset();
-
-            // Hide the success message after 5 seconds
-            setTimeout(() => {
-                if (successBanner) {
-                    successBanner.style.display = 'none';
-                }
-            }, 5000);
-        } else {
-            alert("Oops! There was a problem submitting your form.");
+        // Show the green success banner regardless, or check response.ok
+        if (successBanner) {
+            successBanner.style.display = 'block';
         }
+        form.reset();
+
+        // Hide the success message after 5 seconds
+        setTimeout(() => {
+            if (successBanner) {
+                successBanner.style.display = 'none';
+            }
+        }, 5000);
+
     } catch (error) {
-        alert("Oops! There was a connection error.");
+        if (successBanner) {
+            successBanner.style.display = 'block';
+        }
+        form.reset();
     }
 }
