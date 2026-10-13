@@ -26,31 +26,38 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', resizeCanvas);
 
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
-    const fontSize = 13; // Smaller font size creates a denser, tighter rain grid
+    const fontSize = 14;
     let columns = Math.floor(canvas.width / fontSize);
-    let drops = Array(columns).fill(1);
+    let drops = Array(columns).fill(1).map(() => Math.random() * -50);
 
     function drawMatrix() {
-        // Light background fade creates the classic vertical trailing rain effect
-        ctx.fillStyle = 'rgba(15, 23, 42, 0.15)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         ctx.font = `${fontSize}px monospace`;
 
         for (let i = 0; i < drops.length; i++) {
-            const text = characters.charAt(Math.floor(Math.random() * characters.length));
-            
-            // Soft, dim, muted cyberpunk colors
-            const colors = ['rgba(56, 189, 248, 0.6)', 'rgba(0, 255, 102, 0.5)', 'rgba(129, 140, 248, 0.6)', 'rgba(192, 132, 252, 0.5)', 'rgba(52, 211, 153, 0.5)'];
-            ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
-            
-            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            for (let j = 0; j < 6; j++) {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                const alpha = Math.max(0.1, (6 - j) / 6);
+                const colors = [
+                    `rgba(56, 189, 248, ${alpha})`,
+                    `rgba(0, 255, 102, ${alpha})`,
+                    `rgba(129, 140, 248, ${alpha})`,
+                    `rgba(192, 132, 252, ${alpha})`,
+                    `rgba(52, 211, 153, ${alpha})`
+                ];
+                ctx.fillStyle = colors[i % colors.length];
+                
+                const yPos = (drops[i] - j) * fontSize;
+                if (yPos > 0 && yPos < canvas.height) {
+                    ctx.fillText(text, i * fontSize, yPos);
+                }
+            }
 
-            // Reset drop to the top once it hits the bottom
-            if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
+            if (drops[i] * fontSize > canvas.height) {
                 drops[i] = 0;
             }
-            drops[i]++;
+            drops[i] += 0.8;
         }
     }
     setInterval(drawMatrix, 35);
