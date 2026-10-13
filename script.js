@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (drops[i] * fontSize > canvas.height) {
                 drops[i] = 0;
             }
-            drops[i] += 0.4; // Reduced speed for a slower, smoother drift
+            drops[i] += 0.2; // Even slower, gentle drift
         }
     }
     setInterval(drawMatrix, 35);
