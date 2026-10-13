@@ -39,16 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let j = 0; j < 6; j++) {
                 const text = characters.charAt(Math.floor(Math.random() * characters.length));
                 
-                // Dim, subtle alpha opacity so it stays soft and atmospheric
+                // Sleek, dim grey alpha opacity
                 const alpha = Math.max(0.05, ((6 - j) / 6) * 0.35);
-                const colors = [
-                    `rgba(56, 189, 248, ${alpha})`,
-                    `rgba(0, 255, 102, ${alpha})`,
-                    `rgba(129, 140, 248, ${alpha})`,
-                    `rgba(192, 132, 252, ${alpha})`,
-                    `rgba(52, 211, 153, ${alpha})`
-                ];
-                ctx.fillStyle = colors[i % colors.length];
+                ctx.fillStyle = `rgba(160, 174, 192, ${alpha})`;
                 
                 const yPos = (drops[i] - j) * fontSize;
                 if (yPos > 0 && yPos < canvas.height) {
@@ -59,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (drops[i] * fontSize > canvas.height) {
                 drops[i] = 0;
             }
-            drops[i] += 0.2; // Even slower, gentle drift
+            drops[i] += 0.2;
         }
     }
     setInterval(drawMatrix, 35);
