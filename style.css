@@ -452,15 +452,15 @@ header nav a.active {
     width: 100%;
 }
 
-/* Maintain custom cyan border without harsh outer glow */
+/* Match subtle card border styling */
 .todo-card {
     box-shadow: none !important;
-    border: 1px solid #38bdf8 !important;
+    border: 1px solid rgba(56, 189, 248, 0.25) !important;
 }
 
 .todo-card:hover {
     box-shadow: none !important;
-    border: 1px solid #38bdf8 !important;
+    border: 1px solid rgba(56, 189, 248, 0.4) !important;
 }
 
 /* Task Counter Style */
