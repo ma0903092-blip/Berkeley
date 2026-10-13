@@ -1,5 +1,5 @@
 // ==========================================
-// 1. MATRIX DIGITAL RAIN
+// 1. MATRIX DIGITAL RAIN (Over Background Image)
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     let canvas = document.getElementById('matrixCanvas');
@@ -31,9 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let drops = Array(columns).fill(1);
 
     function drawMatrix() {
-    function drawMatrix() {
-        // Low opacity fade so your background image remains fully visible underneath
-        ctx.fillStyle = 'rgba(15, 23, 42, 0.08)';
+        // Low opacity background clear so your background image shows through clearly
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.12)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         ctx.font = `${fontSize}px monospace`;
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < drops.length; i++) {
             const text = characters.charAt(Math.floor(Math.random() * characters.length));
             
-            // Cyberpunk color palette
+            // Cyberpunk multi-color palette
             const colors = ['#38bdf8', '#00ff66', '#818cf8', '#c084fc', '#34d399'];
             ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
             
@@ -53,24 +52,23 @@ document.addEventListener('DOMContentLoaded', () => {
             drops[i]++;
         }
     }
-    setInterval(drawMatrix, 40);
+    setInterval(drawMatrix, 35);
 });
 
 
 // ==========================================
-// 2. TO-DO LIST APPLICATION (Robust Selectors)
+// 2. TO-DO LIST APPLICATION (Fully Functional)
 // ==========================================
 let currentFilter = 'all';
 
 document.addEventListener('DOMContentLoaded', () => {
     const taskList = document.getElementById('taskList');
-    if (!taskList) return; // Exit if not on index.html
+    if (!taskList) return; // Exit safely if not on index.html
 
     loadTasks();
 
-    // Universal selectors to catch any button/input ID variation
-    const addTaskBtn = document.getElementById('addTaskBtn') || document.querySelector('.btn-add') || document.querySelector('button');
-    const taskInput = document.getElementById('taskInput') || document.querySelector('input[type="text"]');
+    const addTaskBtn = document.getElementById('addTaskBtn');
+    const taskInput = document.getElementById('taskInput');
 
     if (addTaskBtn) {
         addTaskBtn.addEventListener('click', (e) => {
@@ -118,8 +116,9 @@ function saveTasksToLocalStorage(tasks) {
     localStorage.setItem('berkeley_tasks', JSON.stringify(tasks));
 }
 
-function addNewTask() {
-    const taskInput = document.getElementById('taskInput') || document.querySelector('input[type="text"]');
+// Global scope attachment so inline onclick attributes in HTML work seamlessly
+window.addNewTask = function() {
+    const taskInput = document.getElementById('taskInput');
     if (!taskInput) return;
 
     const text = taskInput.value.trim();
