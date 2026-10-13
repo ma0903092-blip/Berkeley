@@ -160,14 +160,15 @@ function createTaskElement(task) {
     if (!listElement) return;
 
     const li = document.createElement('li');
-    li.style.cssText = "display: flex; align-items: center; justify-content: space-between; padding: 10px 15px; margin-bottom: 10px; background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 6px; color: #cbd5e1;";
+    li.style.cssText = "display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; margin-bottom: 10px; background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 6px; color: #cbd5e1; gap: 15px;";
 
     const leftDiv = document.createElement('div');
-    leftDiv.style.cssText = "display: flex; align-items: center; gap: 10px;";
+    leftDiv.style.cssText = "display: flex; align-items: center; gap: 12px; overflow: hidden; text-overflow: ellipsis; flex-grow: 1;";
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.checked = task.completed;
+    checkbox.style.cursor = 'pointer';
     checkbox.addEventListener('change', () => {
         task.completed = checkbox.checked;
         updateTaskInStorage(task);
@@ -176,6 +177,7 @@ function createTaskElement(task) {
 
     const span = document.createElement('span');
     span.textContent = task.text;
+    span.style.wordBreak = 'break-word';
     if (task.completed) {
         span.style.textDecoration = 'line-through';
         span.style.color = '#64748b';
@@ -186,7 +188,7 @@ function createTaskElement(task) {
 
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
-    deleteBtn.style.cssText = "background: #ef4444; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;";
+    deleteBtn.style.cssText = "background: #ef4444; color: white; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; flex-shrink: 0;";
     deleteBtn.addEventListener('click', () => {
         deleteTask(task.id);
     });
