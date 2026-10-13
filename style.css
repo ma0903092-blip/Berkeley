@@ -500,13 +500,20 @@ header nav a.active {
 }
 
 /* Matrix Rain Background Canvas */
+/* Matrix Rain Background Canvas */
 #matrix-canvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* Keeps it strictly in the background behind all content */
-    opacity: 0.15; /* Subtle and non-distracting */
+    z-index: 0; /* Brings canvas above page background */
+    opacity: 0.35; /* Increased opacity so drops are clearly visible */
     pointer-events: none;
+}
+
+/* Ensure main containers sit above the canvas */
+.main-container, .navbar, .site-footer {
+    position: relative;
+    z-index: 1;
 }

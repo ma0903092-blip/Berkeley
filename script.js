@@ -180,46 +180,40 @@ function handleContactSubmit(event) {
     }, 5000);
 }
 
-// Initialize Matrix Digital Rain Effect on page load
-window.addEventListener('DOMContentLoaded', () => {
-    // Create canvas dynamically if it doesn't exist
+// Initialize Matrix Digital Rain Effect
+function initMatrixRain() {
     let canvas = document.getElementById('matrix-canvas');
     if (!canvas) {
         canvas = document.createElement('canvas');
         canvas.id = 'matrix-canvas';
-        document.body.prepend(canvas);
+        document.body.insertBefore(canvas, document.body.firstChild);
     }
 
     const ctx = canvas.getContext('2d');
 
-    // Set canvas size
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
 
-    // Characters used for the rain (cyber/binary style)
     const characters = '01ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#@$%&*<>?/~';
     const fontSize = 16;
-    const columns = canvas.width / fontSize;
-
-    // Drops array tracking Y position of each column
-    const drops = [];
-    for (let i = 0; i < columns; i++) {
-        drops[i] = 1;
-    }
+    let columns = Math.floor(canvas.width / fontSize);
+    let drops = Array(columns).fill(1);
 
     function drawMatrix() {
-        // Translucent black background to create fading trail effect
-        ctx.fillStyle = 'rgba(10, 17, 40, 0.05)';
+        ctx.fillStyle = 'rgba(10, 17, 40, 0.1)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = '#4ecca3'; // Cyber green accent color
+        ctx.fillStyle = '#4ecca3';
         ctx.font = fontSize + 'px monospace';
 
         for (let i = 0; i < drops.length; i++) {
             const text = characters.charAt(Math.floor(Math.random() * characters.length));
             ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-            // Reset drop back to top randomly once it hits bottom
             if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
                 drops[i] = 0;
             }
@@ -227,12 +221,12 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Run the animation loop
     setInterval(drawMatrix, 33);
+}
 
-    // Handle window resizing
-    window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    });
-});
+// Run when document is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMatrixRain);
+} else {
+    initMatrixRain();
+}
