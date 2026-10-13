@@ -1,5 +1,5 @@
 // ==========================================
-// 1. MATRIX DIGITAL RAIN (Over Background Image)
+// 1. MATRIX DIGITAL RAIN (Transparent Overlay)
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     let canvas = document.getElementById('matrixCanvas');
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.style.left = '0';
         canvas.style.width = '100vw';
         canvas.style.height = '100vh';
-        canvas.style.zIndex = '1'; // Sits above background image, below text cards
+        canvas.style.zIndex = '1';
         canvas.style.pointerEvents = 'none';
         document.body.prepend(canvas);
     }
@@ -31,17 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let drops = Array(columns).fill(1);
 
     function drawMatrix() {
-        // Low opacity background clear so your background image shows through clearly
-        ctx.fillStyle = 'rgba(15, 23, 42, 0.12)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        // Clear canvas completely so your background image shines through 100% untouched
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         ctx.font = `${fontSize}px monospace`;
 
         for (let i = 0; i < drops.length; i++) {
             const text = characters.charAt(Math.floor(Math.random() * characters.length));
             
-            // Cyberpunk multi-color palette
-            const colors = ['#38bdf8', '#00ff66', '#818cf8', '#c084fc', '#34d399'];
+            // Soft, dim, muted cyberpunk colors so it isn't glaringly bright
+            const colors = ['rgba(56, 189, 248, 0.45)', 'rgba(0, 255, 102, 0.4)', 'rgba(129, 140, 248, 0.45)', 'rgba(192, 132, 252, 0.4)', 'rgba(52, 211, 153, 0.4)'];
             ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
             
             ctx.fillText(text, i * fontSize, drops[i] * fontSize);
@@ -52,18 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
             drops[i]++;
         }
     }
-    setInterval(drawMatrix, 35);
+    setInterval(drawMatrix, 45);
 });
 
 
 // ==========================================
-// 2. TO-DO LIST APPLICATION (Fully Functional)
+// 2. TO-DO LIST APPLICATION
 // ==========================================
 let currentFilter = 'all';
 
 document.addEventListener('DOMContentLoaded', () => {
     const taskList = document.getElementById('taskList');
-    if (!taskList) return; // Exit safely if not on index.html
+    if (!taskList) return; // Exit safely if not on index page
 
     loadTasks();
 
@@ -116,7 +115,7 @@ function saveTasksToLocalStorage(tasks) {
     localStorage.setItem('berkeley_tasks', JSON.stringify(tasks));
 }
 
-// Global scope attachment so inline onclick attributes in HTML work seamlessly
+// Global scope attachment for HTML onclick bindings
 window.addNewTask = function() {
     const taskInput = document.getElementById('taskInput');
     if (!taskInput) return;
@@ -217,45 +216,3 @@ function updateTaskCounter(tasks) {
     const activeTasks = tasks.filter(t => !t.completed).length;
     counterEl.textContent = `${activeTasks} item${activeTasks === 1 ? '' : 's'} left`;
 }
-
-
-// ==========================================
-// 3. CYBER AUDIO SYNTHESIZER
-// ==========================================
-const AudioContext = window.AudioContext || window.webkitAudioContext;
-let audioCtx = null;
-let audioEnabled = true;
-
-function playCyberClick(frequency = 800, type = 'sine', duration = 0.04) {
-    if (!audioEnabled) return;
-    
-    try {
-        if (!audioCtx) audioCtx = new AudioContext();
-        if (audioCtx.state === 'suspended') audioCtx.resume();
-
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-
-        osc.type = type;
-        osc.frequency.setValueAtTime(frequency, audioCtx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + duration);
-
-        gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
-
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-
-        osc.start();
-        osc.stop(audioCtx.currentTime + duration);
-    } catch (e) {}
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const clickableElements = document.querySelectorAll('button, a, .project-card');
-    clickableElements.forEach(element => {
-        element.addEventListener('click', () => {
-            playCyberClick(700, 'sine', 0.05);
-        });
-    });
-});
