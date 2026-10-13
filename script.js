@@ -44,13 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
             
             ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            // Reset drop to the top immediately once it hits the bottom for continuous full force
+            if (drops[i] * fontSize > canvas.height) {
                 drops[i] = 0;
             }
             drops[i]++;
         }
     }
-    setInterval(drawMatrix, 30); // Faster, smoother dense flow
+    setInterval(drawMatrix, 25);
 });
 
 
