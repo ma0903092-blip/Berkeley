@@ -31,8 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let drops = Array(columns).fill(1);
 
     function drawMatrix() {
-        // Semi-transparent trail fade to keep it dim and reveal the background image
-        ctx.fillStyle = 'rgba(15, 23, 42, 0.25)';
+    function drawMatrix() {
+        // Low opacity fade so your background image remains fully visible underneath
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.08)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         ctx.font = `${fontSize}px monospace`;
@@ -40,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < drops.length; i++) {
             const text = characters.charAt(Math.floor(Math.random() * characters.length));
             
-            // Dim, muted cyberpunk color palette
-            const colors = ['rgba(56, 189, 248, 0.7)', 'rgba(0, 255, 102, 0.6)', 'rgba(129, 140, 248, 0.7)', 'rgba(192, 132, 252, 0.6)'];
+            // Cyberpunk color palette
+            const colors = ['#38bdf8', '#00ff66', '#818cf8', '#c084fc', '#34d399'];
             ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
             
             ctx.fillText(text, i * fontSize, drops[i] * fontSize);
