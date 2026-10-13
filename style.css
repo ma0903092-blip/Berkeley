@@ -452,15 +452,37 @@ header nav a.active {
     width: 100%;
 }
 
-/* Match subtle card border styling */
+/* Base To-Do Card */
 .todo-card {
-    box-shadow: none !important;
+    position: relative;
     border: 1px solid rgba(56, 189, 248, 0.25) !important;
+    box-shadow: 0 0 0px transparent !important;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+/* Invisible extended proximity zone around the card */
+.todo-card::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    z-index: -1;
+}
+
+/* Outer radial edge glow on hover/proximity */
+.todo-card:hover {
+    border-color: rgba(56, 189, 248, 0.8) !important;
+    box-shadow: 
+        0 0 20px rgba(56, 189, 248, 0.35),
+        0 0 40px rgba(56, 189, 248, 0.15),
+        inset 0 0 15px rgba(56, 189, 248, 0.1) !important;
 }
 
 .todo-card:hover {
-    box-shadow: none !important;
-    border: 1px solid rgba(56, 189, 248, 0.4) !important;
+    border-color: rgba(56, 189, 248, 0.75) !important;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.35) !important;
 }
 
 /* Task Counter Style */
