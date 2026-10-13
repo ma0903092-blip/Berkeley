@@ -26,12 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', resizeCanvas);
 
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
-    const fontSize = 16;
+    const fontSize = 13; // Smaller font size creates a denser, tighter rain grid
     let columns = Math.floor(canvas.width / fontSize);
     let drops = Array(columns).fill(1);
 
     function drawMatrix() {
-        // Clear canvas completely so your background image shines through 100% untouched
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         ctx.font = `${fontSize}px monospace`;
@@ -39,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < drops.length; i++) {
             const text = characters.charAt(Math.floor(Math.random() * characters.length));
             
-            // Soft, dim, muted cyberpunk colors so it isn't glaringly bright
+            // Soft, dim, muted cyberpunk colors
             const colors = ['rgba(56, 189, 248, 0.45)', 'rgba(0, 255, 102, 0.4)', 'rgba(129, 140, 248, 0.45)', 'rgba(192, 132, 252, 0.4)', 'rgba(52, 211, 153, 0.4)'];
             ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
             
@@ -51,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             drops[i]++;
         }
     }
-    setInterval(drawMatrix, 45);
+    setInterval(drawMatrix, 30); // Faster, smoother dense flow
 });
 
 
