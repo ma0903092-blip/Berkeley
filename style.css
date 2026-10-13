@@ -524,3 +524,27 @@ header nav a.active {
     position: relative;
     z-index: 1;
 }
+
+.task-item {
+    background: rgba(30, 41, 59, 0.85);
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #cbd5e1;
+    gap: 15px;
+}
+
+.delete-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
