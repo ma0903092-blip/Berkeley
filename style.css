@@ -308,7 +308,7 @@ header nav a.active {
     color: #38bdf8;
 }
 
-/* Responsive Mobile Navigation Adjustments */
+/* Responsive Mobile Navigation & Layout Adjustments */
 @media screen and (max-width: 768px) {
     header, nav {
         flex-direction: column;
@@ -330,7 +330,7 @@ header nav a.active {
         font-size: 0.9rem;
     }
 
-    h1, .hero-title {
+    h1, .hero-title, .main-title {
         font-size: 1.8rem !important;
         padding: 0 0.5rem;
     }
@@ -338,6 +338,13 @@ header nav a.active {
     .main-container {
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+
+    /* Force card grid containers to stack in a single column on mobile */
+    .card-container, 
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
     }
 }
 
