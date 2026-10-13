@@ -38,7 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < drops.length; i++) {
             for (let j = 0; j < 6; j++) {
                 const text = characters.charAt(Math.floor(Math.random() * characters.length));
-                const alpha = Math.max(0.1, (6 - j) / 6);
+                
+                // Dim, subtle alpha opacity so it stays soft and atmospheric
+                const alpha = Math.max(0.05, ((6 - j) / 6) * 0.35);
                 const colors = [
                     `rgba(56, 189, 248, ${alpha})`,
                     `rgba(0, 255, 102, ${alpha})`,
