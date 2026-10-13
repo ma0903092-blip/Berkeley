@@ -31,7 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let drops = Array(columns).fill(1);
 
     function drawMatrix() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Light background fade creates the classic vertical trailing rain effect
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.15)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         ctx.font = `${fontSize}px monospace`;
 
@@ -39,19 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const text = characters.charAt(Math.floor(Math.random() * characters.length));
             
             // Soft, dim, muted cyberpunk colors
-            const colors = ['rgba(56, 189, 248, 0.45)', 'rgba(0, 255, 102, 0.4)', 'rgba(129, 140, 248, 0.45)', 'rgba(192, 132, 252, 0.4)', 'rgba(52, 211, 153, 0.4)'];
+            const colors = ['rgba(56, 189, 248, 0.6)', 'rgba(0, 255, 102, 0.5)', 'rgba(129, 140, 248, 0.6)', 'rgba(192, 132, 252, 0.5)', 'rgba(52, 211, 153, 0.5)'];
             ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
             
             ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-            // Reset drop to the top immediately once it hits the bottom for continuous full force
-            if (drops[i] * fontSize > canvas.height) {
+            // Reset drop to the top once it hits the bottom
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
                 drops[i] = 0;
             }
             drops[i]++;
         }
     }
-    setInterval(drawMatrix, 25);
+    setInterval(drawMatrix, 35);
 });
 
 
