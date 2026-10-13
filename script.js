@@ -1,5 +1,5 @@
 // ==========================================
-// 1. MATRIX DIGITAL RAIN (Dimmer & Multi-color)
+// 1. MATRIX DIGITAL RAIN (Transparent & Dim)
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     let canvas = document.getElementById('matrixCanvas');
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.style.left = '0';
         canvas.style.width = '100vw';
         canvas.style.height = '100vh';
-        canvas.style.zIndex = '0';
+        canvas.style.zIndex = '-1'; // Sits behind content, revealing body background image
         canvas.style.pointerEvents = 'none';
         document.body.prepend(canvas);
     }
@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let drops = Array(columns).fill(1);
 
     function drawMatrix() {
-        // Dimmer trail fade (0.25 opacity)
-        ctx.fillStyle = 'rgba(15, 23, 42, 0.25)';
+        // Transparent trail fade so your background image shows through clearly
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.35)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         ctx.font = `${fontSize}px monospace`;
@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < drops.length; i++) {
             const text = characters.charAt(Math.floor(Math.random() * characters.length));
             
-            // Multi-color cyberpunk palette
-            const colors = ['#38bdf8', '#00ff66', '#818cf8', '#c084fc', '#34d399'];
+            // Dimmer, muted cyberpunk color palette
+            const colors = ['rgba(56, 189, 248, 0.6)', 'rgba(0, 255, 102, 0.5)', 'rgba(129, 140, 248, 0.6)', 'rgba(192, 132, 252, 0.5)'];
             ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
             
             ctx.fillText(text, i * fontSize, drops[i] * fontSize);
@@ -52,23 +52,24 @@ document.addEventListener('DOMContentLoaded', () => {
             drops[i]++;
         }
     }
-    setInterval(drawMatrix, 35);
+    setInterval(drawMatrix, 40);
 });
 
 
 // ==========================================
-// 2. TO-DO LIST APPLICATION
+// 2. TO-DO LIST APPLICATION (Robust Selectors)
 // ==========================================
 let currentFilter = 'all';
 
 document.addEventListener('DOMContentLoaded', () => {
     const taskList = document.getElementById('taskList');
-    if (!taskList) return; // Exit safely if not on index.html
+    if (!taskList) return; // Exit if not on index.html
 
     loadTasks();
 
-    const addTaskBtn = document.getElementById('addTaskBtn');
-    const taskInput = document.getElementById('taskInput');
+    // Universal selectors to catch any button/input ID variation
+    const addTaskBtn = document.getElementById('addTaskBtn') || document.querySelector('.btn-add') || document.querySelector('button');
+    const taskInput = document.getElementById('taskInput') || document.querySelector('input[type="text"]');
 
     if (addTaskBtn) {
         addTaskBtn.addEventListener('click', (e) => {
@@ -117,7 +118,7 @@ function saveTasksToLocalStorage(tasks) {
 }
 
 function addNewTask() {
-    const taskInput = document.getElementById('taskInput');
+    const taskInput = document.getElementById('taskInput') || document.querySelector('input[type="text"]');
     if (!taskInput) return;
 
     const text = taskInput.value.trim();
