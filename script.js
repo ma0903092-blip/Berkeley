@@ -66,13 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadTasks();
 
-    const addTaskBtn = document.getElementById('addTaskBtn');
-    const taskInput = document.getElementById('taskInput');
+   const taskInput = document.getElementById('taskInput');
 
-    if (addTaskBtn) {
-        addTaskBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            addNewTask();
+    if (taskInput) {
+        taskInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                addTask();
+            }
         });
     }
 
@@ -116,26 +117,24 @@ function saveTasksToLocalStorage(tasks) {
 }
 
 // Global scope attachment for HTML onclick bindings
-window.addNewTask = function() {
+window.addTask = function() {
     const taskInput = document.getElementById('taskInput');
     if (!taskInput) return;
 
     const text = taskInput.value.trim();
     if (!text) return;
 
-    const newTask = {
+    const tasks = getTasksFromLocalStorage();
+    tasks.push({
         id: Date.now(),
         text: text,
         completed: false
-    };
-
-    const tasks = getTasksFromLocalStorage();
-    tasks.push(newTask);
+    });
     saveTasksToLocalStorage(tasks);
 
     taskInput.value = '';
     loadTasks();
-}
+};
 
 function loadTasks() {
     const listElement = document.getElementById('taskList');
