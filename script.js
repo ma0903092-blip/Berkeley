@@ -1,8 +1,7 @@
 // ==========================================
-// 1. MATRIX DIGITAL RAIN BACKGROUND ANIMATION
+// 1. MATRIX DIGITAL RAIN BACKGROUND
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-    // Automatically inject canvas if it doesn't exist
     let canvas = document.getElementById('matrixCanvas');
     if (!canvas) {
         canvas = document.createElement('canvas');
@@ -12,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.style.left = '0';
         canvas.style.width = '100vw';
         canvas.style.height = '100vh';
-        canvas.style.zIndex = '-1';
+        canvas.style.zIndex = '0'; // Sits right above background
         canvas.style.pointerEvents = 'none';
         document.body.prepend(canvas);
     }
@@ -26,16 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+-<>?/\\|';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
     const fontSize = 16;
     let columns = Math.floor(canvas.width / fontSize);
     let drops = Array(columns).fill(1);
 
     function drawMatrix() {
-        ctx.fillStyle = 'rgba(15, 23, 42, 0.15)'; // Dark trailing fade effect
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.12)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = '#00ff66'; // Matrix green text
+        ctx.fillStyle = '#00ff66';
         ctx.font = `${fontSize}px monospace`;
 
         for (let i = 0; i < drops.length; i++) {
@@ -53,29 +52,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ==========================================
-// 2. PERSISTENT TO-DO LIST APP (Index Page)
+// 2. TO-DO LIST APPLICATION
 // ==========================================
 let currentFilter = 'all';
 
 document.addEventListener('DOMContentLoaded', () => {
     const taskList = document.getElementById('taskList');
-    if (!taskList) return; // Safely exit if not on the To-Do page
+    if (!taskList) return; // Exit if not on index.html
 
     loadTasks();
 
-    const addTaskBtn = document.getElementById('addTaskBtn');
-    if (addTaskBtn) {
-        addTaskBtn.addEventListener('click', addNewTask);
-    }
-
+    // Universal button & enter key listeners for adding tasks
+    const addTaskBtn = document.getElementById('addTaskBtn') || document.querySelector('button[onclick*="add"]');
     const taskInput = document.getElementById('taskInput');
-    if (taskInput) {
-        taskInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') addNewTask();
+
+    if (addTaskBtn) {
+        addTaskBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            addNewTask();
         });
     }
 
-    // Filter buttons setup
+    if (taskInput) {
+        taskInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                addNewTask();
+            }
+        });
+    }
+
+    // Filter buttons
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -150,8 +157,7 @@ function createTaskElement(task) {
     if (!listElement) return;
 
     const li = document.createElement('li');
-    li.className = `task-item ${task.completed ? 'completed' : ''}`;
-    li.style.cssText = "display: flex; align-items: center; justify-content: space-between; padding: 10px 15px; margin-bottom: 10px; background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 6px; color: #cbd5e1;";
+    li.style.cssText = "display: flex; align-items: center; justify-content: space-between; padding: 10px 15px; margin-bottom: 10px; background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 6px; color: #cbd5e1;";
 
     const leftDiv = document.createElement('div');
     leftDiv.style.cssText = "display: flex; align-items: center; gap: 10px;";
@@ -207,51 +213,3 @@ function updateTaskCounter(tasks) {
     const activeTasks = tasks.filter(t => !t.completed).length;
     counterEl.textContent = `${activeTasks} item${activeTasks === 1 ? '' : 's'} left`;
 }
-
-
-// ==========================================
-// 3. CYBER AUDIO SYNTHESIZER (Web Audio API)
-// ==========================================
-const AudioContext = window.AudioContext || window.webkitAudioContext;
-let audioCtx = null;
-let audioEnabled = true;
-
-function playCyberClick(frequency = 800, type = 'sine', duration = 0.04) {
-    if (!audioEnabled) return;
-    
-    try {
-        if (!audioCtx) {
-            audioCtx = new AudioContext();
-        }
-        if (audioCtx.state === 'suspended') {
-            audioCtx.resume();
-        }
-
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-
-        osc.type = type;
-        osc.frequency.setValueAtTime(frequency, audioCtx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + duration);
-
-        gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
-
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-
-        osc.start();
-        osc.stop(audioCtx.currentTime + duration);
-    } catch (e) {
-        // Fallback if audio context is blocked
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const clickableElements = document.querySelectorAll('button, a, .project-card');
-    clickableElements.forEach(element => {
-        element.addEventListener('click', () => {
-            playCyberClick(700, 'sine', 0.05);
-        });
-    });
-});
