@@ -72,6 +72,10 @@ function createTaskElement(task) {
 function loadTasks() {
     let tasks = getTasksFromLocalStorage();
     const listElement = document.getElementById('taskList');
+
+    // Guard clause: Exit if taskList doesn't exist on this page
+    if (!listElement) return;
+    
     listElement.innerHTML = ''; // Clear the list before re-rendering
     
     let filteredTasks = tasks;
@@ -88,10 +92,13 @@ function loadTasks() {
 }
 
 function updateTaskCounter(tasks) {
-    const activeTasks = tasks.filter(t => !t.completed).length;
     const counterEl = document.getElementById('taskCounter');
-    if (counterEl) {
-        counterEl.textContent = `${activeTasks} item${activeTasks === 1 ? '' : 's'} left`;
+    
+    // Guard clause: Exit if taskCounter doesn't exist on this page
+    if (!counterEl) return;
+
+    const activeTasks = tasks.filter(t => !t.completed).length;
+    counterEl.textContent = `${activeTasks} item${activeTasks === 1 ? '' : 's'} left`;
     }
 }
 
