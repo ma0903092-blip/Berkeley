@@ -1,5 +1,5 @@
 // ==========================================
-// 1. MATRIX DIGITAL RAIN (Transparent & Dim)
+// 1. MATRIX DIGITAL RAIN
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     let canvas = document.getElementById('matrixCanvas');
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.style.left = '0';
         canvas.style.width = '100vw';
         canvas.style.height = '100vh';
-        canvas.style.zIndex = '-1'; // Sits behind content, revealing body background image
+        canvas.style.zIndex = '1'; // Sits above background image, below text cards
         canvas.style.pointerEvents = 'none';
         document.body.prepend(canvas);
     }
@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let drops = Array(columns).fill(1);
 
     function drawMatrix() {
-        // Transparent trail fade so your background image shows through clearly
-        ctx.fillStyle = 'rgba(15, 23, 42, 0.35)';
+        // Semi-transparent trail fade to keep it dim and reveal the background image
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.25)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         ctx.font = `${fontSize}px monospace`;
@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < drops.length; i++) {
             const text = characters.charAt(Math.floor(Math.random() * characters.length));
             
-            // Dimmer, muted cyberpunk color palette
-            const colors = ['rgba(56, 189, 248, 0.6)', 'rgba(0, 255, 102, 0.5)', 'rgba(129, 140, 248, 0.6)', 'rgba(192, 132, 252, 0.5)'];
+            // Dim, muted cyberpunk color palette
+            const colors = ['rgba(56, 189, 248, 0.7)', 'rgba(0, 255, 102, 0.6)', 'rgba(129, 140, 248, 0.7)', 'rgba(192, 132, 252, 0.6)'];
             ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
             
             ctx.fillText(text, i * fontSize, drops[i] * fontSize);
