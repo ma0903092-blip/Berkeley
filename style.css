@@ -616,3 +616,19 @@ input[type="date"]#taskDate:focus {
     border-color: #38bdf8 !important;
     box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
 }
+
+/* Responsive Fix for To-Do Input Group on Mobile */
+@media (max-width: 600px) {
+    .todo-card .input-group {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+    }
+
+    .todo-card .input-group input[type="text"],
+    .todo-card .input-group input[type="date"],
+    .todo-card .input-group button {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
