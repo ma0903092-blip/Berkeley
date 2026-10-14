@@ -90,15 +90,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            currentFilter = btn.getAttribute('data-filter') || 'all';
-            loadTasks();
-        });
+   // Global function for filter buttons
+function filterTasks(filter) {
+    currentFilter = filter;
+
+    // Update active class on buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
     });
+
+    if (event && event.target) {
+        event.target.classList.add('active');
+    }
+
+    loadTasks();
+}
 
     const clearCompletedBtn = document.getElementById('clearCompletedBtn');
     if (clearCompletedBtn) {
