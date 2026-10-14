@@ -30,16 +30,16 @@
     <canvas id="matrixCanvas"></canvas>
 
     <!-- Main Content Container -->
-    <main class="main-container">
+    <main class="main-container" style="padding-top: 100px;">
         <h1 class="main-title">WEATHER TELEMETRY</h1>
         <p class="main-subtitle">Real-time environmental data acquisition module.</p>
 
         <!-- Weather Card -->
-        <div class="card home-card" style="max-width: 480px; width: 90%; margin-top: 20px; padding: 25px;">
+        <div class="card home-card" style="max-width: 480px; margin: 30px auto 0 auto; padding: 25px;">
             <h2 style="color: #f3f4f6; margin-bottom: 15px; text-align: center;">Atmospheric Scanner</h2>
             
             <div class="input-group" style="display: flex; gap: 10px; margin-bottom: 15px;">
-                <input type="text" id="cityInput" placeholder="Enter target city (e.g. Kisumu, Nairobi)...">
+                <input type="text" id="cityInput" placeholder="Enter target city (e.g. Kisumu, Nairobi)..." style="flex: 1;">
                 <button onclick="getWeather()" class="btn" style="padding: 10px 18px;">Scan</button>
             </div>
 
