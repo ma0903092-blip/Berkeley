@@ -123,10 +123,11 @@
        <!-- To-Do List App Card -->
 <div class="card home-card todo-card">
     <h2 style="color: #f3f4f6; margin-bottom: 15px;">My To-Do List</h2>
-    <div class="input-group">
-        <input type="text" id="taskInput" placeholder="Add a new task...">
-        <button onclick="addTask()" class="btn-add">Add</button>
-    </div>
+    <div class="input-group" style="display: flex; gap: 10px; margin-bottom: 15px;">
+    <input type="text" id="taskInput" placeholder="Add a new task..." style="flex: 1;">
+    <input type="date" id="taskDate" class="task-date-input">
+    <button onclick="addTask()" class="btn-add">Add</button>
+</div>
 
     <!-- Filter Buttons -->
     <div class="filters">
