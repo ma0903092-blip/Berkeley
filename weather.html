@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkeley | Tactical Weather Telemetry</title>
+    <link rel="icon" type="image/jpeg" href="new_logo.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cyberpunk Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="new_logo.jpg" alt="Logo" class="nav-logo-img">
+            <span>Berkeley</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="weather.html" class="active">Weather</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Canvas for Matrix Rain Background -->
+    <canvas id="matrixCanvas"></canvas>
+
+    <!-- Main Content Container -->
+    <main class="main-container">
+        <h1 class="main-title">WEATHER TELEMETRY</h1>
+        <p class="main-subtitle">Real-time environmental data acquisition module.</p>
+
+        <!-- Weather Card -->
+        <div class="card home-card" style="max-width: 500px; margin: 0 auto; padding: 25px;">
+            <h2 style="color: #f3f4f6; margin-bottom: 15px; text-align: center;">Atmospheric Scanner</h2>
+            
+            <div class="input-group" style="display: flex; gap: 10px; margin-bottom: 15px;">
+                <input type="text" id="cityInput" placeholder="Enter target location (e.g. Kisumu, Nairobi)..." style="flex: 1;">
+                <button onclick="getWeather()" class="btn" style="padding: 8px 16px;">Scan</button>
+            </div>
+
+            <div id="weatherResult" style="margin-top: 20px; text-align: center; font-family: monospace;"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Berkeley. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="weather.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
