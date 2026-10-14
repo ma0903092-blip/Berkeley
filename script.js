@@ -135,11 +135,18 @@ window.addTask = function() {
     if (!text) return;
 
     const tasks = getTasksFromLocalStorage();
+    const taskDateInput = document.getElementById('taskDate');
+    const dueDate = taskDateInput ? taskDateInput.value : '';
+
     tasks.push({
         id: Date.now(),
         text: text,
-        completed: false
+        completed: false,
+        dueDate: dueDate // Save the selected date
     });
+
+    if (taskDateInput) taskDateInput.value = ''; // Reset date picker
+
     saveTasksToLocalStorage(tasks);
 
     taskInput.value = '';
@@ -188,6 +195,13 @@ function createTaskElement(task) {
     span.textContent = task.text;
     span.style.wordBreak = 'break-word';
 
+    if (task.dueDate) {
+        const dateBadge = document.createElement('span');
+        dateBadge.className = 'task-date-badge';
+        dateBadge.textContent = `Due: ${task.dueDate}`;
+        leftDiv.appendChild(dateBadge);
+    }
+    
     // Add double-click inline editing to span
     span.addEventListener('dblclick', () => {
         const input = document.createElement('input');
