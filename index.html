@@ -82,6 +82,18 @@
             <a href="projects.html" style="background: #0284c7; color: #ffffff; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; box-shadow: 0 0 15px rgba(2, 132, 199, 0.5); transition: all 0.3s ease;">View My Projects</a>
         </div>
 
+        <!-- Atmospheric Scanner Card -->
+    <div class="card home-card" style="max-width: 480px; width: 90%; margin: 30px auto; padding: 25px;">
+        <h2 style="color: #f3f4f6; margin-bottom: 15px; text-align: center;">Atmospheric Scanner</h2>
+        
+        <div class="input-group" style="display: flex; gap: 10px; margin-bottom: 15px;">
+            <input type="text" id="cityInput" placeholder="Enter target city (e.g. Kisumu, Nairobi)..." style="flex: 1; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.4); color: #f3f4f6; padding: 10px 14px; border-radius: 6px; outline: none;">
+            <button onclick="getWeather()" class="btn" style="padding: 10px 18px;">Scan</button>
+        </div>
+
+        <div id="weatherResult" style="margin-top: 15px; text-align: center; font-family: monospace;"></div>
+    </div>
+
         <!-- Feature Cards -->
         <div class="card-container">
             <!-- CORE Card -->
@@ -153,6 +165,7 @@
     </footer>
 
     <!-- Link your JavaScript file -->
+     <script src="weather.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
