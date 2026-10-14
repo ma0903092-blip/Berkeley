@@ -181,6 +181,31 @@ function createTaskElement(task) {
     const span = document.createElement('span');
     span.textContent = task.text;
     span.style.wordBreak = 'break-word';
+
+    // Add double-click inline editing to span
+    span.addEventListener('dblclick', () => {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'edit-input';
+        input.value = task.text;
+        
+        leftDiv.replaceChild(input, span);
+        input.focus();
+
+        input.onblur = function() {
+            const newText = input.value.trim();
+            if (newText) {
+                task.text = newText;
+                updateTaskInStorage(task);
+            }
+            loadTasks();
+        };
+
+        input.onkeydown = function(e) {
+            if (e.key === 'Enter') input.blur();
+        };
+    });
+    
     if (task.completed) {
         span.style.textDecoration = 'line-through';
         span.style.color = '#64748b';
