@@ -201,7 +201,7 @@ function createTaskElement(task) {
         dateBadge.textContent = `Due: ${task.dueDate}`;
         leftDiv.appendChild(dateBadge);
     }
-    
+
     // Add double-click inline editing to span
     span.addEventListener('dblclick', () => {
         const input = document.createElement('input');
@@ -265,4 +265,51 @@ function updateTaskCounter(tasks) {
 
     const activeTasks = tasks.filter(t => !t.completed).length;
     counterEl.textContent = `${activeTasks} item${activeTasks === 1 ? '' : 's'} left`;
+}
+
+// Interactive Terminal Logic
+const terminalInput = document.getElementById('terminalInput');
+const terminalOutput = document.getElementById('terminalOutput');
+
+if (terminalInput && terminalOutput) {
+    terminalInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            const command = terminalInput.value.trim().toLowerCase();
+            
+            // Print command line entry
+            const cmdLine = document.createElement('p');
+            cmdLine.style.cssText = 'margin: 0 0 8px 0; font-family: monospace; color: #94a3b8;';
+            cmdLine.innerHTML = `<span style="color: #38bdf8;">$</span> ${terminalInput.value}`;
+            terminalOutput.appendChild(cmdLine);
+
+            // Process output line
+            const resLine = document.createElement('p');
+            resLine.style.cssText = 'margin: 0 0 15px 0; font-family: monospace; color: #f3f4f6;';
+
+            if (command === 'help') {
+                resLine.innerHTML = 'Available commands: <span style="color: #38bdf8;">whoami</span>, <span style="color: #38bdf8;">skills</span>, <span style="color: #38bdf8;">status</span>, <span style="color: #38bdf8;">clear</span>';
+            } else if (command === 'whoami') {
+                resLine.textContent = 'System Operator & Full-Spectrum Developer.';
+            } else if (command === 'skills') {
+                resLine.innerHTML = '<span style="color: #34d399;">> Frontend, System Administration, Security & Git Workflow.</span>';
+            } else if (command === 'status') {
+                resLine.textContent = 'System Status: All security layers operational. Node secure.';
+            } else if (command === 'clear') {
+                terminalOutput.innerHTML = '';
+                terminalInput.value = '';
+                return;
+            } else if (command === '') {
+                resLine.textContent = '';
+            } else {
+                resLine.innerHTML = `<span style="color: #ff5f56;">Command not recognized: ${terminalInput.value}. Type 'help' for options.</span>`;
+            }
+
+            if (command !== 'clear') {
+                terminalOutput.appendChild(resLine);
+            }
+
+            terminalInput.value = '';
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        }
+    });
 }
