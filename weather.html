@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berkeley | Tactical Weather Telemetry</title>
+    <title>Berkeley | Weather Telemetry</title>
     <link rel="icon" type="image/jpeg" href="new_logo.jpg">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,11 +11,13 @@
 
     <!-- Cyberpunk Navbar -->
     <nav class="navbar">
-        <a href="index.html" class="nav-logo">
-            <img src="new_logo.jpg" alt="Logo" class="nav-logo-img">
-            <span>Berkeley</span>
-        </a>
-        <div class="nav-links">
+        <div class="logo">
+            <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+                <img src="new_logo.jpg" alt="Logo" class="nav-logo-img" style="width: 35px; height: 35px; border-radius: 50%;">
+                <span>Berkeley</span>
+            </a>
+        </div>
+        <div class="links">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
@@ -37,7 +39,7 @@
             <h2 style="color: #f3f4f6; margin-bottom: 15px; text-align: center;">Atmospheric Scanner</h2>
             
             <div class="input-group" style="display: flex; gap: 10px; margin-bottom: 15px;">
-                <input type="text" id="cityInput" placeholder="Enter target location (e.g. Kisumu, Nairobi)..." style="flex: 1;">
+                <input type="text" id="cityInput" placeholder="Enter target city (e.g. Kisumu, Nairobi)..." style="flex: 1;">
                 <button onclick="getWeather()" class="btn" style="padding: 8px 16px;">Scan</button>
             </div>
 
