@@ -632,3 +632,16 @@ input[type="date"]#taskDate:focus {
         box-sizing: border-box !important;
     }
 }
+
+/* Drag and Drop Styling */
+.todo-card li[draggable="true"] {
+    cursor: grab;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.todo-card li.dragging {
+    opacity: 0.4;
+    cursor: grabbing;
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}

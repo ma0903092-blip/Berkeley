@@ -176,6 +176,8 @@ function createTaskElement(task) {
     if (!listElement) return;
 
     const li = document.createElement('li');
+    li.dataset.id = task.id;
+    li.setAttribute('draggable', 'true');
     li.style.cssText = "display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; margin-bottom: 10px; background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 6px; color: #cbd5e1; gap: 15px;";
 
     const leftDiv = document.createElement('div');
@@ -201,6 +203,39 @@ function createTaskElement(task) {
         dateBadge.textContent = `Due: ${task.dueDate}`;
         leftDiv.appendChild(dateBadge);
     }
+
+    // Drag and Drop Event Handlers
+    li.addEventListener('dragstart', () => {
+        li.classList.add('dragging');
+    });
+
+    li.addEventListener('dragend', () => {
+        li.classList.remove('dragging');
+        // Save reordered tasks to local storage
+        const updatedTasks = [];
+        listElement.querySelectorAll('li').forEach(item => {
+            const id = Number(item.dataset.id);
+            const matched = tasks.find(t => t.id === id);
+            if (matched) updatedTasks.push(matched);
+        });
+        tasks = updatedTasks;
+        saveTasksToLocalStorage(tasks);
+    });
+
+    li.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        const draggingItem = document.querySelector('.dragging');
+        if (!draggingItem) return;
+        const siblings = [...listElement.querySelectorAll('li:not(.dragging)')];
+        const nextSibling = siblings.find(sibling => {
+            return e.clientY <= sibling.getBoundingClientRect().top + sibling.offsetHeight / 2;
+        });
+        if (nextSibling) {
+            listElement.insertBefore(draggingItem, nextSibling);
+        } else {
+            listElement.appendChild(draggingItem);
+        }
+    });
 
     // Add double-click inline editing to span
     span.addEventListener('dblclick', () => {
