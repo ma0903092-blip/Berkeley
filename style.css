@@ -660,3 +660,33 @@ input[type="date"]#taskDate:focus {
     border-color: #38bdf8;
     box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.project-card h3 {
+    color: #f3f4f6;
+    margin-bottom: 8px;
+}
+
+.project-card p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #4ecca3;
+}
