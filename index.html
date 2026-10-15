@@ -93,6 +93,24 @@
         <div id="weatherResult" style="margin-top: 15px; text-align: center; font-family: monospace;"></div>
     </div>
 
+    <!-- Movie Search Card (Cinematic Database) -->
+        <div class="card home-card" style="max-width: 480px; width: 90%; margin: 30px auto; padding: 25px;">
+            <h2 style="color: #f3f4f6; margin-bottom: 15px; text-align: center;">Cinematic Database</h2>
+            
+            <div class="input-group" style="display: flex; gap: 10px; margin-bottom: 15px;">
+                <input type="text" id="searchInput" placeholder="Enter movie title (e.g. Inception)..." style="flex: 1; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.4); color: #f3f4f6; padding: 10px 14px; border-radius: 6px; outline: none;">
+                <button onclick="searchMovie()" class="btn" style="padding: 10px 18px;">Search</button>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loading" style="display: none; text-align: center; color: #4ecca3; font-family: monospace; margin: 15px 0;">
+                [..] Accessing archives...
+            </div>
+
+            <!-- Results Container -->
+            <div id="movieResult" style="margin-top: 15px; font-family: monospace;"></div>
+        </div>
+
         <!-- Feature Cards -->
         <div class="card-container">
             <!-- CORE Card -->
@@ -165,6 +183,7 @@
 
     <!-- Link your JavaScript file -->
      <script src="weather.js"></script>
+     <script src="movie.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
