@@ -3,61 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berkeley | Web Developer & Cyber Operations</title>
-    <meta name="description" content="Official website for Berkeley - Full-spectrum cyber operations, full-stack web engineering, and digital criminology investigations.">
+    <title>Berkeley | Web Developer & Security Analytics Specialist</title>
+    <meta name="description" content="Official website for Berkeley - Full-spectrum web development and security operations.">
     <link rel="icon" type="image/jpeg" href="new_logo.jpg">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Tighter layout structure to bring footer closer */
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #030712;
-            color: #f3f4f6;
-        }
-        .main-container {
-            flex: 0 0 auto;
-            padding-bottom: 1.5rem;
-        }
-
-        /* Realistic Cyber Card Internal Glowing Effect */
-        .home-card {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1.5px solid rgba(56, 189, 248, 0.35);
-            border-radius: 16px;
-            padding: 2.2rem 1.5rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.08);
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* When cursor passes over or lands inside the box: glowing interior & border bloom */
-        .home-card:hover {
-            transform: translateY(-4px);
-            border-color: #38bdf8;
-            background: radial-gradient(circle at center, rgba(56, 189, 248, 0.15) 0%, rgba(15, 23, 42, 0.95) 80%);
-            box-shadow: 0 0 35px rgba(56, 189, 248, 0.4), inset 0 0 25px rgba(56, 189, 248, 0.25);
-        }
-
-        /* Icon box intense internal reaction on hover */
-        .home-card:hover .icon-box {
-            border-color: #38bdf8;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.8), inset 0 0 15px rgba(56, 189, 248, 0.5);
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, rgba(3, 105, 161, 0.3) 100%);
-        }
-    </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
             <a href="index.html" class="logo-box">
-               <img src="new_logo.jpg" alt="BK Logo" class="brand-icon"> 
+                <img src="new_logo.jpg" alt="BK Logo" class="brand-icon">
                 <span>Berkeley</span>
             </a>
         </div>
@@ -68,132 +24,85 @@
             <a href="contact.html">Contact</a>
         </div>
     </nav>
-        </div>
-    </nav>
 
+    <!-- Main Container -->
     <main class="main-container">
-        <!-- Portfolio Hero Header -->
-    <div class="card home-card" style="max-width: 800px; margin: 0 auto 30px auto; padding: 25px; text-align: center;">
-        <h1 style="color: #f3f4f6; margin-bottom: 8px; font-size: 2rem;">Mohammed Ali</h1>
-        <p style="color: #38bdf8; font-weight: 500; font-size: 1.05rem; margin-bottom: 12px; font-family: monospace;">
-            [ Full-Stack & Security Analytics Specialist ]
-        </p>
-        <p style="color: #cbd5e1; line-height: 1.6; max-width: 650px; margin: 0 auto; font-size: 0.95rem;">
-            Welcome to my central platform. I build fast, responsive web applications integrated with real-world APIs, client-side caching, and modern security patterns.
-        </p>
-    </div>
-        <!-- Hero Introduction -->
-        <h1 style="color: #ffffff; font-size: 2.2rem; font-weight: 700; margin-bottom: 0.2rem; text-align: center; letter-spacing: 1px; text-shadow: 0 0 10px rgba(56, 189, 248, 0.8), 0 0 20px rgba(56, 189, 248, 0.5);">WELCOME</h1>
-        <h1 class="main-title" style="font-size: 2.5rem; margin-top: 0; margin-bottom: 0.8rem;">Full-Spectrum Cyber Operations</h1>
-        <p class="main-subtitle">Architecting secure full-stack applications, executing ethical penetration testing, and conducting advanced cyber criminology investigations.</p>
 
-        <div style="text-align: center; margin-bottom: 2rem;">
-            <a href="projects.html" style="background: #0284c7; color: #ffffff; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; box-shadow: 0 0 15px rgba(2, 132, 199, 0.5); transition: all 0.3s ease;">View My Projects</a>
-        </div>
-
-        <!-- Atmospheric Scanner Card -->
-    <div class="card home-card" style="max-width: 480px; width: 90%; margin: 30px auto; padding: 25px;">
-        <h2 style="color: #f3f4f6; margin-bottom: 15px; text-align: center;">Atmospheric Scanner</h2>
-        
-        <div class="input-group" style="display: flex; gap: 10px; margin-bottom: 15px;">
-            <input type="text" id="cityInput" placeholder="Enter target city (e.g. Kisumu, Nairobi)..." style="flex: 1; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.4); color: #f3f4f6; padding: 10px 14px; border-radius: 6px; outline: none;">
-            <button onclick="getWeather()" class="btn" style="padding: 10px 18px;">Scan</button>
-        </div>
-
-        <div id="weatherResult" style="margin-top: 15px; text-align: center; font-family: monospace;"></div>
-    </div>
-
-   <!-- Cinematic Database Card -->
-        <div class="card home-card" style="max-width: 480px; width: 90%; margin: 30px auto; padding: 25px;">
-            <h2 style="color: #f3f4f6; margin-bottom: 15px; text-align: center;">Cinematic Database</h2>
-            
-            <div class="input-group" style="display: flex; gap: 10px; margin-bottom: 15px;">
-                <input type="text" id="searchInput" placeholder="Enter movie title (e.g. Inception)..." style="flex: 1; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.4); color: #f3f4f6; padding: 10px 14px; border-radius: 6px; outline: none;">
-                <button type="button" id="searchBtn" class="btn" style="padding: 10px 18px;">Search</button>
+        <!-- 1. Unified Hero Section -->
+        <section class="card home-card" style="max-width: 850px; margin: 0 auto 30px auto; padding: 35px 25px; text-align: center;">
+            <h1 style="color: #ffffff; font-size: 2.2rem; font-weight: 700; margin-bottom: 0.3rem;">Ali Mohammed</h1>
+            <p style="color: #38bdf8; font-weight: 600; font-size: 1.1rem; margin-bottom: 1rem; font-family: monospace;">
+                [ Full-Stack & Security Analytics Specialist ]
+            </p>
+            <p style="color: #cbd5e1; line-height: 1.6; max-width: 680px; margin: 0 auto 20px auto; font-size: 0.98rem;">
+                Architecting secure full-stack applications, executing ethical web integrations, and engineering high-performance client-side systems.
+            </p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="projects.html" class="btn" style="padding: 10px 22px; text-decoration: none;">View All Projects</a>
+                <a href="contact.html" class="btn" style="padding: 10px 22px; text-decoration: none; background: transparent; border: 1px solid #38bdf8; color: #38bdf8;">Get in Touch</a>
             </div>
+        </section>
 
-            <!-- Loading Indicator -->
-            <div id="loading" style="display: none; text-align: center; color: #4ecca3; font-family: monospace; margin: 15px 0;">
-                [..] Accessing archives...
-            </div>
-
-            <!-- Results Container -->
-            <div id="movieResult" style="margin-top: 15px; font-family: monospace;"></div>
-        </div>
-
-        <!-- Feature Cards -->
-        <div class="card-container">
-            <!-- CORE Card -->
-            <div class="card home-card">
-                <div class="icon-box" style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(3, 105, 161, 0.15) 100%); border: 1.5px solid rgba(56, 189, 248, 0.6); border-radius: 14px; box-shadow: 0 0 20px rgba(56, 189, 248, 0.4), inset 0 0 10px rgba(56, 189, 248, 0.3); margin-bottom: 0.8rem; transition: all 0.35s ease;">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" style="filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.9));">
-                        <polyline points="16 18 22 12 16 6"></polyline>
-                        <polyline points="8 6 2 12 8 18"></polyline>
-                    </svg>
+        <!-- 2. Core Pillars (Pushed up right after Hero) -->
+        <section class="card-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto 40px auto;">
+            <div class="card home-card" style="text-align: center; padding: 25px 15px;">
+                <div class="icon-box" style="display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                 </div>
-                <h3 class="feature-title" style="margin: 0.2rem 0 0.5rem 0; color: #f3f4f6; letter-spacing: 1px; text-align: center;">CORE</h3>
-                <p style="color: #94a3b8; font-size: 0.95rem; margin: 0; line-height: 1.5; text-align: center;">Full-stack web engineering & scalable design.</p>
+                <h3 style="color: #f3f4f6; margin-bottom: 8px; letter-spacing: 1px;">CORE</h3>
+                <p style="color: #94a3b8; font-size: 0.9rem; margin: 0; line-height: 1.5;">Full-stack web engineering & scalable design.</p>
             </div>
 
-            <!-- ANALYZE Card -->
-            <div class="card home-card">
-                <div class="icon-box" style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(3, 105, 161, 0.15) 100%); border: 1.5px solid rgba(56, 189, 248, 0.6); border-radius: 14px; box-shadow: 0 0 20px rgba(56, 189, 248, 0.4), inset 0 0 10px rgba(56, 189, 248, 0.3); margin-bottom: 0.8rem; transition: all 0.35s ease;">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" style="filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.9));">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
+            <div class="card home-card" style="text-align: center; padding: 25px 15px;">
+                <div class="icon-box" style="display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 </div>
-                <h3 class="feature-title" style="margin: 0.2rem 0 0.5rem 0; color: #f3f4f6; letter-spacing: 1px; text-align: center;">ANALYZE</h3>
-                <p style="color: #94a3b8; font-size: 0.95rem; margin: 0; line-height: 1.5; text-align: center;">Digital forensics & cyber threat investigation.</p>
+                <h3 style="color: #f3f4f6; margin-bottom: 8px; letter-spacing: 1px;">ANALYZE</h3>
+                <p style="color: #94a3b8; font-size: 0.9rem; margin: 0; line-height: 1.5;">Data-driven systems & security threat analysis.</p>
             </div>
 
-            <!-- SECURE Card -->
-            <div class="card home-card">
-                <div class="icon-box" style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(3, 105, 161, 0.15) 100%); border: 1.5px solid rgba(56, 189, 248, 0.6); border-radius: 14px; box-shadow: 0 0 20px rgba(56, 189, 248, 0.4), inset 0 0 10px rgba(56, 189, 248, 0.3); margin-bottom: 0.8rem; transition: all 0.35s ease;">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" style="filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.9));">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                    </svg>
+            <div class="card home-card" style="text-align: center; padding: 25px 15px;">
+                <div class="icon-box" style="display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                 </div>
-                <h3 class="feature-title" style="margin: 0.2rem 0 0.5rem 0; color: #f3f4f6; letter-spacing: 1px; text-align: center;">SECURE</h3>
-                <p style="color: #94a3b8; font-size: 0.95rem; margin: 0; line-height: 1.5; text-align: center;">System hardening & vulnerability mitigation.</p>
+                <h3 style="color: #f3f4f6; margin-bottom: 8px; letter-spacing: 1px;">SECURE</h3>
+                <p style="color: #94a3b8; font-size: 0.9rem; margin: 0; line-height: 1.5;">System hardening & application vulnerability mitigation.</p>
             </div>
-        </div>
+        </section>
 
-       <!-- To-Do List App Card -->
-<div class="card home-card todo-card">
-    <h2 style="color: #f3f4f6; margin-bottom: 15px;">My To-Do List</h2>
-    <div class="input-group" style="display: flex; gap: 10px; margin-bottom: 15px;">
-    <input type="text" id="taskInput" placeholder="Add a new task..." style="flex: 1;">
-    <input type="date" id="taskDate" class="task-date-input">
-    <button onclick="addTask()" class="btn-add">Add</button>
-</div>
+        <!-- 3. Interactive Web Applications Showcase -->
+        <section style="max-width: 900px; margin: 0 auto;">
+            <h2 style="color: #f3f4f6; text-align: center; margin-bottom: 25px;">Interactive Applications</h2>
 
-    <!-- Filter Buttons -->
-    <div class="filters">
-        <button class="filter-btn active" onclick="filterTasks('all')">All</button>
-        <button class="filter-btn" onclick="filterTasks('completed')">Completed</button>
-        <button class="filter-btn" onclick="filterTasks('active')">Active</button>
-    </div>
+            <!-- Atmospheric Scanner -->
+            <div class="card home-card" style="max-width: 550px; margin: 0 auto 25px auto; padding: 25px;">
+                <h3 style="color: #f3f4f6; margin-bottom: 15px; text-align: center;">🌦️ Atmospheric Scanner</h3>
+                <div class="input-group" style="display: flex; gap: 10px; margin-bottom: 15px;">
+                    <input type="text" id="cityInput" placeholder="Enter target city..." style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid rgba(56,189,248,0.3); background: rgba(15,23,42,0.8); color: white;">
+                    <button onclick="getWeather()" class="btn" style="padding: 10px 18px;">Scan</button>
+                </div>
+                <div id="weatherResult" style="margin-top: 15px; text-align: center; font-family: monospace;"></div>
+            </div>
 
-    <ul id="taskList"></ul>
+            <!-- Cinematic Database -->
+            <div class="card home-card" style="max-width: 550px; margin: 0 auto 25px auto; padding: 25px;">
+                <h3 style="color: #f3f4f6; margin-bottom: 15px; text-align: center;">🎬 Cinematic Database</h3>
+                <div class="input-group" style="display: flex; gap: 10px; margin-bottom: 15px;">
+                    <input type="text" id="searchInput" placeholder="Enter movie title..." style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid rgba(56,189,248,0.3); background: rgba(15,23,42,0.8); color: white;">
+                    <button type="button" id="searchBtn" class="btn" style="padding: 10px 18px;">Search</button>
+                </div>
+                <div id="loading" style="display: none; text-align: center; color: #4ecca3; font-family: monospace;">[...] Accessing archives...</div>
+                <div id="movieResult" style="margin-top: 15px; font-family: monospace;"></div>
+            </div>
+        </section>
 
-    <!-- Footer with Task Counter and Clear Completed Button -->
-    <div class="todo-footer">
-        <div id="taskCounter" class="task-counter"></div>
-        <button onclick="clearCompletedTasks()" class="btn-clear">Clear Completed</button>
-    </div>
-</div>
-        </div>
     </main>
 
-    <footer class="site-footer" style="text-align: center; padding: 1.2rem 0; color: #94a3b8; font-size: 0.9rem; margin-top: 2rem;">
-        <p style="margin: 0;">&copy; 2026 Berkeley. All Rights Reserved.</p>
+    <footer class="footer" style="text-align: center; padding: 20px; color: #94a3b8; font-size: 0.9rem;">
+        <p>&copy; 2026 Berkeley. All Rights Reserved.</p>
     </footer>
 
-    <!-- Link your JavaScript file -->
-     <script src="weather.js"></script>
-     <script src="movie.js"></script>
-    <script src="script.js"></script>
+    <script src="weather.js"></script>
+    <script src="movie.js"></script>
 </body>
 </html>
