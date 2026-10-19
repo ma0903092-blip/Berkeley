@@ -43,6 +43,25 @@
             </div>
         </section>
 
+        <!-- Terminal / Live Feed Section -->
+<section class="terminal-container">
+  <div class="terminal-header">
+    <div class="terminal-buttons">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+    </div>
+    <div class="terminal-title">system_status@berkeley:~ /logs</div>
+  </div>
+  <div class="terminal-body">
+    <p class="log-line"><span class="timestamp">[2026-10-19 13:20:00]</span> <span class="prefix">---> SYSTEM:</span> Initializing security telemetry feed...</p>
+    <p class="log-line"><span class="timestamp">[2026-10-19 13:20:05]</span> <span class="prefix">---> SUCCESS:</span> Core full-stack & security modules loaded successfully.</p>
+    <p class="log-line"><span class="timestamp">[2026-10-19 13:20:12]</span> <span class="prefix">---> UPCOMING:</span> Developing React To-Do Application v1.2 (Vercel Deployed).</p>
+    <p class="log-line"><span class="timestamp">[2026-10-19 13:20:20]</span> <span class="prefix">---> ACTIVE:</span> Hardening client-side web interfaces & API gateway routes.</p>
+    <p class="log-line prompt"><span class="prefix">berkeley@sec-ops:~$</span> <span class="command-text"></span><span class="cursor">&nbsp;</span></p>
+  </div>
+</section>
+
         <!-- 2. Core Pillars with Glossy Glowing Icon Boxes -->
         <section class="card-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto 40px auto;">
             <div class="card home-card" style="text-align: center; padding: 25px 15px;">
@@ -105,5 +124,23 @@
 
     <script src="weather.js"></script>
     <script src="movie.js"></script>
+
+    <!-- Live Terminal Typing Effect -->
+  <script>
+    const commandText = "cat upcoming_projects.log --status=active";
+    const target = document.querySelector('.command-text');
+    let index = 0;
+
+    function typeCommand() {
+      if (target && index < commandText.length) {
+        target.textContent += commandText.charAt(index);
+        index++;
+        setTimeout(typeCommand, 80);
+      }
+    }
+
+    // Start typing after 1 second
+    setTimeout(typeCommand, 1000);
+  </script>
 </body>
 </html>
