@@ -8,9 +8,26 @@
 </head>
 <body style="background-color: #0b132b; color: #f3f4f6; font-family: sans-serif; margin: 0; padding: 0;">
 
-  <main class="main-container" style="max-width: 850px; margin: 50px auto; padding: 0 15px;">
+  <!-- Navbar matching all other pages -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html" class="logo-box">
+        <img src="new_logo.jpg" alt="BK Logo" class="brand-icon">
+        <span>Berkeley</span>
+      </a>
+    </div>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="faq.html" style="color: #38bdf8; font-weight: 600;">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Main FAQ Container -->
+  <main class="main-container" style="max-width: 850px; margin: 40px auto; padding: 0 15px; min-height: 70vh;">
     
-    <!-- Page Header -->
     <h2 style="color: #f3f4f6; text-align: center; margin-bottom: 8px; font-size: 2rem;">Frequently Asked Questions</h2>
     <p style="color: #94a3b8; text-align: center; font-size: 0.95rem; margin-bottom: 40px;">
       Engineering philosophy, security protocols, and collaboration details.
@@ -67,11 +84,12 @@
 
   </main>
 
-  <footer class="footer" style="width: 100%; text-align: center; padding: 20px 0; color: #94a3b8; margin-top: 50px;">
+  <!-- Clean Footer with Top Separator Line -->
+  <footer class="footer" style="width: 100%; text-align: center; padding: 25px 0; color: #94a3b8; margin-top: 60px; border-top: 1px solid #1e293b; background: #0b132b;">
     <p style="margin: 0;">&copy; 2026 Berkeley. All Rights Reserved.</p>
   </footer>
 
-  <!-- FAQ Toggle Script -->
+  <!-- Accordion Toggle Script -->
   <script>
     document.querySelectorAll('.faq-question').forEach(button => {
       button.addEventListener('click', () => {
