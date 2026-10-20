@@ -21,6 +21,7 @@
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
+            <a href="faq.html" style="color: #38bdf8; font-weight: 600;">FAQ</a>
             <a href="contact.html">Contact</a>
         </div>
     </nav>
@@ -228,28 +229,6 @@
       }
     }
 
-    // Start typing after 1 second
-    setTimeout(typeCommand, 1000);
-    // FAQ Accordion Toggle Script
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const faqItem = button.parentElement;
-      const answer = faqItem.querySelector('.faq-answer');
-      const icon = button.querySelector('.faq-icon');
-
-      const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
-
-      // Close all other open accordion items
-      document.querySelectorAll('.faq-answer').forEach(el => el.style.maxHeight = '0px');
-      document.querySelectorAll('.faq-icon').forEach(el => el.textContent = '+');
-
-      // Toggle clicked item
-      if (!isOpen) {
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-        icon.textContent = '−';
-      }
-    });
-  });
   </script>
 </body>
 </html>

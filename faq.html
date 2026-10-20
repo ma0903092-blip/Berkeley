@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Berkeley | Web Developer & Security Analyst</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: #0b132b; color: #f3f4f6; font-family: sans-serif; margin: 0; padding: 0;">
+
+  <main class="main-container" style="max-width: 850px; margin: 50px auto; padding: 0 15px;">
+    
+    <!-- Page Header -->
+    <h2 style="color: #f3f4f6; text-align: center; margin-bottom: 8px; font-size: 2rem;">Frequently Asked Questions</h2>
+    <p style="color: #94a3b8; text-align: center; font-size: 0.95rem; margin-bottom: 40px;">
+      Engineering philosophy, security protocols, and collaboration details.
+    </p>
+
+    <!-- FAQ Accordion Container -->
+    <div class="faq-container">
+      
+      <!-- Item 1 -->
+      <div class="faq-item" style="border: 1px solid #1e293b; background: #0f172a; border-radius: 8px; margin-bottom: 12px; overflow: hidden;">
+        <button class="faq-question" style="width: 100%; text-align: left; background: none; border: none; padding: 18px 20px; color: #38bdf8; font-size: 1.05rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          <span>What security measures are implemented in your applications?</span>
+          <span class="faq-icon" style="color: #38bdf8; transition: transform 0.3s;">+</span>
+        </button>
+        <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 20px; color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">
+          <p style="padding-bottom: 18px; margin: 0;">
+            All builds incorporate client-side input sanitization, rate-limiting on sensitive endpoints, secure CORS policies, and protection against common OWASP Top 10 web vulnerabilities.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="faq-item" style="border: 1px solid #1e293b; background: #0f172a; border-radius: 8px; margin-bottom: 12px; overflow: hidden;">
+        <button class="faq-question" style="width: 100%; text-align: left; background: none; border: none; padding: 18px 20px; color: #38bdf8; font-size: 1.05rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          <span>What is your primary development stack?</span>
+          <span class="faq-icon" style="color: #38bdf8; transition: transform 0.3s;">+</span>
+        </button>
+        <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 20px; color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">
+          <p style="padding-bottom: 18px; margin: 0;">
+            Full-stack Web Development using HTML5, CSS3, Modern JavaScript (ES6+), React, Node.js, combined with web app security testing and automated scripting tools.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="faq-item" style="border: 1px solid #1e293b; background: #0f172a; border-radius: 8px; margin-bottom: 12px; overflow: hidden;">
+        <button class="faq-question" style="width: 100%; text-align: left; background: none; border: none; padding: 18px 20px; color: #38bdf8; font-size: 1.05rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          <span>How can I request a security audit or collaboration?</span>
+          <span class="faq-icon" style="color: #38bdf8; transition: transform 0.3s;">+</span>
+        </button>
+        <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 20px; color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">
+          <p style="padding-bottom: 18px; margin: 0;">
+            Feel free to reach out directly via the <strong>Contact</strong> page or submit a query through the interactive forms.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Back to Home Button -->
+    <div style="text-align: center; margin-top: 30px;">
+      <a href="index.html" class="btn" style="text-decoration: none; padding: 10px 20px; background: #38bdf8; color: #0b132b; border-radius: 6px; font-weight: 600;">← Back to Home</a>
+    </div>
+
+  </main>
+
+  <footer class="footer" style="width: 100%; text-align: center; padding: 20px 0; color: #94a3b8; margin-top: 50px;">
+    <p style="margin: 0;">&copy; 2026 Berkeley. All Rights Reserved.</p>
+  </footer>
+
+  <!-- FAQ Toggle Script -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        const answer = faqItem.querySelector('.faq-answer');
+        const icon = button.querySelector('.faq-icon');
+
+        const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+
+        document.querySelectorAll('.faq-answer').forEach(el => el.style.maxHeight = '0px');
+        document.querySelectorAll('.faq-icon').forEach(el => el.textContent = '+');
+
+        if (!isOpen) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          icon.textContent = '−';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
