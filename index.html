@@ -98,17 +98,22 @@
       <!-- 3. Interactive Web Applications Showcase -->
 <section style="max-width: 900px; margin: 0 auto 40px auto; padding: 0 15px;">
   <style>
-    /* Cards glow only when hovered */
+    /* Matches outer cyan border and subtle glow from Welcome box */
     .interactive-grid .app-card {
-      border: 1px solid #1e293b;
-      background: #0f172a;
-      border-radius: 12px;
-      transition: all 0.3s ease;
+      background: rgba(15, 23, 42, 0.85) !important;
+      backdrop-filter: blur(10px) !important;
+      border: 1.5px solid #38bdf8 !important;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.25) !important;
+      border-radius: 12px !important;
+      transition: all 0.3s ease !important;
     }
+
+    /* Enhances glow slightly when hovered */
     .interactive-grid .app-card:hover {
-      border-color: #38bdf8;
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+      border-color: #38bdf8 !important;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.45) !important;
     }
+    
     /* Identical styling & glow behavior for both input boxes */
     #cityInput, #searchInput, .cyber-input {
       flex: 1 !important;
