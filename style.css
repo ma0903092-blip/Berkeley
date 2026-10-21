@@ -103,22 +103,23 @@ body {
 }
 
 .card {
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(10px);
-    padding: 2.2rem 1.8rem;
-    border-radius: 12px;
-    border: 1.5px solid rgba(56, 189, 248, 0.4);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
-    transition: all 0.3s ease;
+    background: rgba(15, 23, 42, 0.85) !important;
+    backdrop-filter: blur(10px) !important;
+    padding: 2.2rem 1.8rem !important;
+    border-radius: 12px !important;
+    border: 1.5px solid rgba(56, 189, 248, 0.4) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.15) !important;
+    transition: all 0.3s ease !important;
 }
 
 .card:hover {
-    border-color: rgba(56, 189, 248, 0.8);
-    box-shadow: 0 0 30px rgba(56, 189, 248, 0.35);
+    background: rgba(15, 23, 42, 0.85) !important;
+    border-color: rgba(56, 189, 248, 0.8) !important;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.3) !important;
 }
 
 /* Glossy Glowing Cyber Buttons */
