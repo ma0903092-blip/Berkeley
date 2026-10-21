@@ -109,24 +109,25 @@
       border-color: #38bdf8;
       box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
     }
-    /* Input boxes glow on hover and click/focus */
-    .cyber-input {
-      flex: 1;
-      padding: 10px 14px;
-      background: #0b132b;
-      border: 1px solid #1e293b;
-      border-radius: 6px;
-      color: #ffffff;
-      font-size: 0.95rem;
-      outline: none;
-      transition: all 0.3s ease;
+    /* Identical styling & glow behavior for both input boxes */
+    #cityInput, #searchInput, .cyber-input {
+      flex: 1 !important;
+      padding: 10px 14px !important;
+      background: #0b132b !important;
+      border: 1px solid #1e293b !important;
+      border-radius: 6px !important;
+      color: #ffffff !important;
+      font-size: 0.95rem !important;
+      outline: none !important;
+      box-shadow: none !important;
+      transition: all 0.3s ease !important;
     }
-    .cyber-input:hover {
-      border-color: rgba(56, 189, 248, 0.5);
+    #cityInput:hover, #searchInput:hover, .cyber-input:hover {
+      border-color: rgba(56, 189, 248, 0.5) !important;
     }
-    .cyber-input:focus {
-      border-color: #38bdf8;
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+    #cityInput:focus, #searchInput:focus, .cyber-input:focus {
+      border-color: #38bdf8 !important;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.4) !important;
     }
   </style>
 
