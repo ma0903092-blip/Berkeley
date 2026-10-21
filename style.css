@@ -122,6 +122,12 @@ body {
     box-shadow: 0 0 25px rgba(56, 189, 248, 0.3) !important;
 }
 
+.featured-mini-card:hover {
+  border-color: rgba(56, 189, 248, 0.8) !important;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.35) !important;
+  transform: translateY(-2px);
+}
+
 /* Glossy Glowing Cyber Buttons */
 .cyber-button {
     background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(3, 105, 161, 0.4));
