@@ -249,12 +249,29 @@
     }
 
   </script>
-  <!-- Cyber Navigation Sidebar -->
-<div id="cyber-sidebar" style="position: fixed; left: 12px; top: 50%; transform: translateY(-50%); background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(10px); border: 1.5px solid rgba(56, 189, 248, 0.4); border-radius: 12px; padding: 12px 8px; z-index: 999; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);">
-  <a href="#welcome" title="Welcome" style="color: #38bdf8; text-decoration: none; font-size: 1.2rem; text-align: center; transition: transform 0.2s ease;">🏠</a>
-  <a href="#core" title="Core Capabilities" style="color: #94a3b8; text-decoration: none; font-size: 1.2rem; text-align: center; transition: transform 0.2s ease;">🛡️</a>
-  <a href="#interactive-apps" title="Interactive Apps" style="color: #94a3b8; text-decoration: none; font-size: 1.2rem; text-align: center; transition: transform 0.2s ease;">⚡</a>
-  <a href="#system-logs" title="System Logs" style="color: #94a3b8; text-decoration: none; font-size: 1.2rem; text-align: center; transition: transform 0.2s ease;">💻</a>
+  <!-- Cyber Navigation Sidebar with 3D Glowing Icons -->
+<div id="cyber-sidebar" style="position: fixed; left: 14px; top: 50%; transform: translateY(-50%); background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px); border: 1.5px solid rgba(56, 189, 248, 0.6); border-radius: 16px; padding: 14px 10px; z-index: 999; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);">
+  
+  <!-- Home 3D -->
+  <a href="#welcome" title="Welcome" style="display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="https://raw.githubusercontent.com/T3M4/fluentui-emoji-3d/main/assets/House/3d/house_3d.png" alt="Home" style="width: 28px; height: 28px; filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));">
+  </a>
+
+  <!-- Core / Shield 3D -->
+  <a href="#core" title="Core Capabilities" style="display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="https://raw.githubusercontent.com/T3M4/fluentui-emoji-3d/main/assets/Shield/3d/shield_3d.png" alt="Shield" style="width: 28px; height: 28px; filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));">
+  </a>
+
+  <!-- Lightning / Apps 3D -->
+  <a href="#interactive-apps" title="Interactive Apps" style="display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="https://raw.githubusercontent.com/T3M4/fluentui-emoji-3d/main/assets/High%20voltage/3d/high_voltage_3d.png" alt="Apps" style="width: 28px; height: 28px; filter: drop-shadow(0 0 6px rgba(234, 179, 8, 0.7));">
+  </a>
+
+  <!-- Laptop / Terminal 3D -->
+  <a href="#system-logs" title="System Logs" style="display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="https://raw.githubusercontent.com/T3M4/fluentui-emoji-3d/main/assets/Laptop/3d/laptop_3d.png" alt="System Logs" style="width: 28px; height: 28px; filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));">
+  </a>
+
 </div>
 </body>
 </html>
