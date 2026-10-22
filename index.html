@@ -174,28 +174,38 @@
   </div>
 
   <!-- Top Featured Builds Widget Grid -->
-  <div class="app-card" style="background: rgba(15, 23, 42, 0.85) !important; border: 1.5px solid rgba(56, 189, 248, 0.6) !important; border-radius: 12px; padding: 18px; max-width: 420px; margin: 25px auto; box-shadow: 0 0 20px rgba(56, 189, 248, 0.25) !important; backdrop-filter: blur(10px);">
-    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 8px; margin-bottom: 12px;">
-      <h3 style="color: #f3f4f6; font-size: 0.95rem; margin: 0; font-family: monospace;">⚡ FEATURED BUILDS</h3>
-      <span style="font-family: monospace; font-size: 0.75rem; color: #38bdf8;">[ POPULAR ]</span>
-    </div>
-    
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-      <!-- Featured Item 1 -->
-      <a href="#interactive-apps" class="featured-mini-card" style="text-decoration: none; background: #0b132b; border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 8px; padding: 12px; text-align: center; transition: all 0.3s ease; display: block;">
-        <div style="font-size: 1.4rem; margin-bottom: 4px;">🌩️</div>
+  <div class="app-card" style="background: rgba(15, 23, 42, 0.85) !important; border: 1.5px solid rgba(56, 189, 248, 0.6) !important; border-radius: 12px; padding: 18px; max-width: 440px; margin: 25px auto; box-shadow: 0 0 20px rgba(56, 189, 248, 0.25) !important; backdrop-filter: blur(10px);">
+  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 8px; margin-bottom: 12px;">
+    <h3 style="color: #f3f4f6; font-size: 0.95rem; margin: 0; font-family: monospace;">⚡ FEATURED BUILDS</h3>
+    <span style="font-family: monospace; font-size: 0.75rem; color: #38bdf8;">[ CLICK PREVIEW ]</span>
+  </div>
+  
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+    <!-- Featured Item 1: Atmospheric Scanner Thumbnail -->
+    <div onclick="openPreview('Atmospheric Scanner', 'weather.js', '🌩️ Real-Time Weather & Telemetry Scanner', 'Scans atmospheric data, temperature, humidity, and weather conditions for any target city.', '#interactive-apps')" class="featured-mini-card" style="cursor: pointer; background: #0b132b; border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 8px; overflow: hidden; transition: all 0.3s ease;">
+      <div style="height: 75px; background: radial-gradient(circle at center, #1e293b, #0b132b); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #1e293b; position: relative;">
+        <span style="font-size: 2rem; filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));">🌩️</span>
+        <span style="position: absolute; bottom: 4px; right: 6px; font-size: 0.65rem; background: rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 2px 6px; border-radius: 4px; font-family: monospace;">PREVIEW</span>
+      </div>
+      <div style="padding: 8px; text-align: center;">
         <div style="font-size: 0.8rem; font-weight: bold; color: #ffffff;">Atmospheric Scanner</div>
         <div style="font-size: 0.7rem; color: #38bdf8; font-family: monospace; margin-top: 2px;">weather.js</div>
-      </a>
-      
-      <!-- Featured Item 2 -->
-      <a href="#interactive-apps" class="featured-mini-card" style="text-decoration: none; background: #0b132b; border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 8px; padding: 12px; text-align: center; transition: all 0.3s ease; display: block;">
-        <div style="font-size: 1.4rem; margin-bottom: 4px;">🎬</div>
+      </div>
+    </div>
+    
+    <!-- Featured Item 2: Cinematic Database Thumbnail -->
+    <div onclick="openPreview('Cinematic Database', 'movie.js', '🎬 Movie & Media Intelligence Engine', 'Queries cinematic databases to return plot summaries, metadata, ratings, and media release info.', '#interactive-apps')" class="featured-mini-card" style="cursor: pointer; background: #0b132b; border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 8px; overflow: hidden; transition: all 0.3s ease;">
+      <div style="height: 75px; background: radial-gradient(circle at center, #1e293b, #0b132b); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #1e293b; position: relative;">
+        <span style="font-size: 2rem; filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));">🎬</span>
+        <span style="position: absolute; bottom: 4px; right: 6px; font-size: 0.65rem; background: rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 2px 6px; border-radius: 4px; font-family: monospace;">PREVIEW</span>
+      </div>
+      <div style="padding: 8px; text-align: center;">
         <div style="font-size: 0.8rem; font-weight: bold; color: #ffffff;">Cinematic Database</div>
         <div style="font-size: 0.7rem; color: #38bdf8; font-family: monospace; margin-top: 2px;">movie.js</div>
-      </a>
+      </div>
     </div>
   </div>
+</div>
 
   <!-- Side-by-Side Grid Container -->
   <div class="interactive-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
@@ -294,6 +304,48 @@
       sidebar.style.transform = 'translateY(-50%) translateX(0)';
       toggleBtn.innerHTML = '◄';
     }
+  }
+</script>
+<!-- Quick-Preview Modal Box -->
+<div id="previewModal" style="display: none; position: fixed; inset: 0; background: rgba(11, 19, 43, 0.85); backdrop-filter: blur(8px); z-index: 1000; align-items: center; justify-content: center; padding: 15px;">
+  <div style="background: rgba(15, 23, 42, 0.95); border: 1.5px solid rgba(56, 189, 248, 0.7); border-radius: 12px; max-width: 420px; width: 100%; padding: 20px; box-shadow: 0 0 30px rgba(56, 189, 248, 0.3); position: relative; font-family: sans-serif;">
+    
+    <!-- Close Button -->
+    <button onclick="closePreview()" style="position: absolute; top: 12px; right: 12px; background: none; border: none; color: #38bdf8; font-size: 1.2rem; cursor: pointer; outline: none;">✕</button>
+    
+    <!-- Title & File Badge -->
+    <div id="modalTitle" style="color: #ffffff; font-size: 1.1rem; font-weight: bold; margin-bottom: 4px;"></div>
+    <div id="modalFile" style="color: #38bdf8; font-family: monospace; font-size: 0.8rem; margin-bottom: 12px;"></div>
+    
+    <!-- Icon Banner -->
+    <div id="modalBanner" style="font-size: 1rem; color: #e2e8f0; background: rgba(30, 41, 59, 0.8); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 12px; text-align: center; margin-bottom: 14px;"></div>
+    
+    <!-- Description -->
+    <div id="modalDesc" style="color: #94a3b8; font-size: 0.85rem; line-height: 1.4; margin-bottom: 18px;"></div>
+    
+    <!-- Actions -->
+    <div style="display: flex; gap: 10px; justify-content: flex-end;">
+      <button onclick="closePreview()" style="background: transparent; border: 1px solid #334155; color: #94a3b8; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">Close</button>
+      <a id="modalJumpBtn" href="" onclick="closePreview()" style="background: #38bdf8; color: #0f172a; font-weight: bold; padding: 8px 14px; border-radius: 6px; text-decoration: none; font-size: 0.8rem;">Launch Tool ➔</a>
+    </div>
+  </div>
+</div>
+
+<!-- Quick-Preview Modal Script -->
+<script>
+  function openPreview(title, file, banner, desc, targetHash) {
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalFile').innerText = file;
+    document.getElementById('modalBanner').innerText = banner;
+    document.getElementById('modalDesc').innerText = desc;
+    document.getElementById('modalJumpBtn').href = targetHash;
+    
+    const modal = document.getElementById('previewModal');
+    modal.style.display = 'flex';
+  }
+
+  function closePreview() {
+    document.getElementById('previewModal').style.display = 'none';
   }
 </script>
 </body>
