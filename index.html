@@ -306,40 +306,59 @@
     }
   }
 </script>
-<!-- Quick-Preview Modal Box -->
+<!-- Enhanced Quick-Preview Modal Box -->
 <div id="previewModal" style="display: none; position: fixed; inset: 0; background: rgba(11, 19, 43, 0.85); backdrop-filter: blur(8px); z-index: 1000; align-items: center; justify-content: center; padding: 15px;">
-  <div style="background: rgba(15, 23, 42, 0.95); border: 1.5px solid rgba(56, 189, 248, 0.7); border-radius: 12px; max-width: 420px; width: 100%; padding: 20px; box-shadow: 0 0 30px rgba(56, 189, 248, 0.3); position: relative; font-family: sans-serif;">
+  <div style="background: rgba(15, 23, 42, 0.95); border: 1.5px solid rgba(56, 189, 248, 0.7); border-radius: 12px; max-width: 440px; width: 100%; padding: 22px; box-shadow: 0 0 30px rgba(56, 189, 248, 0.3); position: relative; font-family: sans-serif;">
     
     <!-- Close Button -->
-    <button onclick="closePreview()" style="position: absolute; top: 12px; right: 12px; background: none; border: none; color: #38bdf8; font-size: 1.2rem; cursor: pointer; outline: none;">✕</button>
+    <button onclick="closePreview()" title="Close (ESC)" style="position: absolute; top: 12px; right: 12px; background: none; border: none; color: #38bdf8; font-size: 1.2rem; cursor: pointer; outline: none;">✕</button>
     
-    <!-- Title & File Badge -->
-    <div id="modalTitle" style="color: #ffffff; font-size: 1.1rem; font-weight: bold; margin-bottom: 4px;"></div>
+    <!-- Title & System Build Badge -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+      <div id="modalTitle" style="color: #ffffff; font-size: 1.15rem; font-weight: bold;"></div>
+      <span style="font-family: monospace; font-size: 0.65rem; color: #38bdf8; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); padding: 2px 6px; border-radius: 4px;">BUILD #1.2 - STABLE</span>
+    </div>
     <div id="modalFile" style="color: #38bdf8; font-family: monospace; font-size: 0.8rem; margin-bottom: 12px;"></div>
     
-    <!-- Icon Banner -->
-    <div id="modalBanner" style="font-size: 1rem; color: #e2e8f0; background: rgba(30, 41, 59, 0.8); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 12px; text-align: center; margin-bottom: 14px;"></div>
+    <!-- Banner Description -->
+    <div id="modalBanner" style="font-size: 0.9rem; color: #e2e8f0; background: rgba(30, 41, 59, 0.8); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 10px; text-align: center; margin-bottom: 12px;"></div>
     
-    <!-- Description -->
-    <div id="modalDesc" style="color: #94a3b8; font-size: 0.85rem; line-height: 1.4; margin-bottom: 18px;"></div>
+    <!-- Main Description -->
+    <div id="modalDesc" style="color: #94a3b8; font-size: 0.85rem; line-height: 1.4; margin-bottom: 14px;"></div>
+    
+    <!-- Tech Stack Badges -->
+    <div style="margin-bottom: 18px;">
+      <div style="font-family: monospace; font-size: 0.7rem; color: #64748b; margin-bottom: 6px; text-transform: uppercase;">Powered By:</div>
+      <div id="modalTechStack" style="display: flex; gap: 6px; flex-wrap: wrap;"></div>
+    </div>
     
     <!-- Actions -->
-    <div style="display: flex; gap: 10px; justify-content: flex-end;">
-      <button onclick="closePreview()" style="background: transparent; border: 1px solid #334155; color: #94a3b8; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">Close</button>
+    <div style="display: flex; gap: 10px; justify-content: flex-end; align-items: center;">
+      <a id="modalSourceBtn" href="https://github.com/ma0903092-blip/Berkeley" target="_blank" style="background: rgba(30, 41, 59, 0.8); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; padding: 8px 12px; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-family: monospace; transition: all 0.2s;">⚙️ View Source</a>
       <a id="modalJumpBtn" href="" onclick="closePreview()" style="background: #38bdf8; color: #0f172a; font-weight: bold; padding: 8px 14px; border-radius: 6px; text-decoration: none; font-size: 0.8rem;">Launch Tool ➔</a>
     </div>
   </div>
 </div>
 
-<!-- Quick-Preview Modal Script -->
+<!-- Modal Script with Tech Stack & ESC Key Listener -->
 <script>
-  function openPreview(title, file, banner, desc, targetHash) {
+  function openPreview(title, file, banner, desc, techArray, targetHash) {
     document.getElementById('modalTitle').innerText = title;
     document.getElementById('modalFile').innerText = file;
     document.getElementById('modalBanner').innerText = banner;
     document.getElementById('modalDesc').innerText = desc;
     document.getElementById('modalJumpBtn').href = targetHash;
     
+    // Render Tech Stack Badges
+    const stackContainer = document.getElementById('modalTechStack');
+    stackContainer.innerHTML = '';
+    techArray.forEach(tech => {
+      const badge = document.createElement('span');
+      badge.innerText = tech;
+      badge.style.cssText = 'font-family: monospace; font-size: 0.7rem; color: #38bdf8; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); padding: 2px 8px; border-radius: 4px;';
+      stackContainer.appendChild(badge);
+    });
+
     const modal = document.getElementById('previewModal');
     modal.style.display = 'flex';
   }
@@ -347,6 +366,13 @@
   function closePreview() {
     document.getElementById('previewModal').style.display = 'none';
   }
+
+  // Keyboard Event Listener to close modal on ESC key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closePreview();
+    }
+  });
 </script>
 </body>
 </html>
