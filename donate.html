@@ -21,10 +21,10 @@
       background: rgba(15, 23, 42, 0.85);
       border: 1px solid #1e293b;
       border-radius: 12px;
-      padding: 25px 20px;
+      padding: 30px 20px;
       backdrop-filter: blur(10px);
       box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
 
     .donations-title {
@@ -43,61 +43,52 @@
       color: #94a3b8;
     }
 
-    /* 2-Column Main Options Grid */
-    .donation-methods-grid {
+    /* Cards Grid */
+    .qr-grid {
       display: flex;
-      gap: 25px;
+      flex-wrap: wrap;
+      gap: 30px;
       justify-content: center;
-      align-items: stretch;
-      margin-bottom: 40px;
+      margin-bottom: 45px;
     }
 
-    .method-card {
-      flex: 1;
-      min-width: 320px;
-      background: rgba(15, 23, 42, 0.85);
+    .qr-card {
+      background: rgba(15, 23, 42, 0.9);
       border: 1px solid #1e293b;
       border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
       padding: 20px;
+      width: 360px;
+      box-sizing: border-box;
       backdrop-filter: blur(10px);
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center;
-      box-sizing: border-box;
+      justify-content: space-between;
     }
 
-    .method-header {
-      font-size: 1.15rem;
-      font-weight: 600;
+    .qr-header {
       color: #38bdf8;
+      font-weight: 600;
+      font-size: 1.1rem;
       margin-bottom: 4px;
     }
 
-    .method-subtext {
+    .qr-subtext {
       font-size: 0.8rem;
       color: #94a3b8;
       margin-bottom: 15px;
     }
 
-    /* Direct Transfer Specifics */
-    .btc-card-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      height: 560px;
-      width: 100%;
-    }
-
     .qr-img {
-      width: 190px;
-      height: 190px;
+      width: 170px;
+      height: 170px;
       background: #fff;
-      padding: 8px;
+      padding: 6px;
       border-radius: 8px;
-      margin: 20px 0;
+      margin-bottom: 15px;
     }
 
     .address-wrapper {
@@ -105,9 +96,8 @@
       background: #0b132b;
       border: 1px solid rgba(56, 189, 248, 0.2);
       border-radius: 6px;
-      padding: 12px;
+      padding: 10px;
       box-sizing: border-box;
-      margin-top: auto;
     }
 
     .address-text {
@@ -115,20 +105,20 @@
       font-family: monospace;
       word-break: break-all;
       color: #cbd5e1;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .copy-btn {
       background: rgba(56, 189, 248, 0.15);
       color: #38bdf8;
       border: 1px solid rgba(56, 189, 248, 0.3);
-      padding: 8px 16px;
+      padding: 7px 14px;
       border-radius: 4px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: bold;
       cursor: pointer;
-      transition: all 0.2s ease;
       width: 100%;
+      transition: all 0.2s ease;
     }
 
     .copy-btn:hover {
@@ -138,11 +128,9 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      .donation-methods-grid {
+      .qr-grid {
         flex-direction: column;
-      }
-      .btc-card-content {
-        height: auto;
+        align-items: center;
       }
     }
   </style>
@@ -179,35 +167,32 @@
       </p>
     </div>
 
-    <!-- Dual Payment Cards Grid -->
-    <div class="donation-methods-grid">
+    <!-- Direct Transfer Cards Grid -->
+    <div class="qr-grid">
       
-      <!-- Option 1: Automated Payment Gateway Widget -->
-      <div class="method-card">
-        <div class="method-header">Instant Gateway</div>
-        <div class="method-subtext">Automated widget supporting multiple cryptocurrencies</div>
-        
-        <iframe src="https://nowpayments.io/embeds/donation-widget?api_key=HMYQJB4-9QB4A5M-NNAJ8QK-31PBHVE" 
-                width="100%" 
-                height="560" 
-                frameborder="0" 
-                scrolling="yes" 
-                style="border-radius: 6px; border: none; background: #ffffff;">
-        </iframe>
+      <!-- Bitcoin Card -->
+      <div class="qr-card">
+        <div>
+          <div class="qr-header">Bitcoin (BTC)</div>
+          <div class="qr-subtext">Direct network transfer</div>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39" alt="BTC QR Code" class="qr-img">
+        </div>
+        <div class="address-wrapper">
+          <div class="address-text" id="btc-addr">bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39</div>
+          <button class="copy-btn" onclick="copyText('btc-addr', this)">Copy Address</button>
+        </div>
       </div>
 
-      <!-- Option 2: Direct Bitcoin Transfer -->
-      <div class="method-card">
-        <div class="method-header">Direct Bitcoin Transfer</div>
-        <div class="method-subtext">Scan QR code or copy direct wallet address below</div>
-        
-        <div class="btc-card-content">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=190x190&data=bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39" alt="BTC QR Code" class="qr-img">
-          
-          <div class="address-wrapper">
-            <div class="address-text" id="btc-address">bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39</div>
-            <button class="copy-btn" onclick="copyAddress()">Copy Address</button>
-          </div>
+      <!-- USDT TRC20 Card -->
+      <div class="qr-card">
+        <div>
+          <div class="qr-header">USDT (TRC20 / Tron)</div>
+          <div class="qr-subtext">Fast network transfer</div>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=YOUR_USDT_TRC20_ADDRESS_HERE" alt="USDT QR Code" class="qr-img">
+        </div>
+        <div class="address-wrapper">
+          <div class="address-text" id="usdt-addr">YOUR_USDT_TRC20_ADDRESS_HERE</div>
+          <button class="copy-btn" onclick="copyText('usdt-addr', this)">Copy Address</button>
         </div>
       </div>
 
@@ -225,14 +210,14 @@
     © 2026 Berkeley. All Rights Reserved.
   </footer>
 
-  <!-- Simple Copy Script -->
+  <!-- Universal Copy Script -->
   <script>
-    function copyAddress() {
-      const addr = document.getElementById("btc-address").innerText;
+    function copyText(elementId, btnElement) {
+      const addr = document.getElementById(elementId).innerText;
       navigator.clipboard.writeText(addr).then(() => {
-        const btn = document.querySelector(".copy-btn");
-        btn.innerText = "Copied!";
-        setTimeout(() => { btn.innerText = "Copy Address"; }, 2000);
+        const originalText = btnElement.innerText;
+        btnElement.innerText = "Copied!";
+        setTimeout(() => { btnElement.innerText = originalText; }, 2000);
       });
     }
   </script>
