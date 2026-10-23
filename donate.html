@@ -6,10 +6,135 @@
   <title>Donate - Berkeley | Web Developer</title>
   <link rel="icon" type="image/jpeg" href="new_logo.jpg">
   <link rel="stylesheet" href="style.css">
-</head>
-<body style="background-color: #0b132b; color: #f3f4f6; font-family: sans-serif; margin: 0; padding: 0;">
+  <style>
+    /* Content Layout Styles */
+    .donations-page {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #cbd5e1;
+      font-family: sans-serif;
+    }
 
-  <!-- Navbar -->
+    .donations-title {
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      color: #f3f4f6;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    /* Top Section Grid: Note + Widget */
+    .top-donation-grid {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      margin-bottom: 50px;
+    }
+
+    .donation-text {
+      flex: 1;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .donation-text p {
+      margin-bottom: 18px;
+    }
+
+    .widget-container {
+      width: 340px;
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .widget-header {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #38bdf8;
+      margin-bottom: 8px;
+    }
+
+    .widget-subtext {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 15px;
+    }
+
+    /* Static QR Grid Section */
+    .qr-section-title {
+      font-size: 1.3rem;
+      color: #38bdf8;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+      padding-bottom: 8px;
+    }
+
+    .qr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .qr-card {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 15px;
+      max-width: 380px;
+    }
+
+    .qr-header {
+      background: rgba(56, 189, 248, 0.1);
+      color: #38bdf8;
+      font-weight: bold;
+      padding: 10px;
+      font-size: 0.85rem;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .qr-card img {
+      width: 170px;
+      height: 170px;
+      margin: 15px 0;
+      border-radius: 4px;
+      background: #fff;
+      padding: 5px;
+    }
+
+    .address-box {
+      font-size: 0.75rem;
+      word-break: break-all;
+      background: #0b132b;
+      padding: 8px 12px;
+      margin: 0 15px;
+      border-radius: 4px;
+      color: #cbd5e1;
+      border: 1px solid rgba(56, 189, 248, 0.15);
+    }
+
+    /* Responsive adjustment for smaller screens */
+    @media (max-width: 768px) {
+      .top-donation-grid {
+        flex-direction: column;
+      }
+      .widget-container {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body style="background-color: #0b132b; color: #f3f4f6; margin: 0; padding: 0;">
+
+  <!-- Standard Navbar -->
   <nav class="navbar">
     <div class="logo">
       <a href="index.html" class="logo-box">
@@ -27,34 +152,24 @@
     </div>
   </nav>
 
-  <!-- Main Container -->
-  <main class="main-container" style="max-width: 900px; margin: 40px auto 20px auto; padding: 0 15px;">
-    <div style="text-align: center;">
-      <h1 style="color: #f3f4f6; font-size: 2.2rem; margin-bottom: 10px;">Support the Project</h1>
-      <p style="color: #94a3b8; max-width: 650px; margin: 0 auto; font-size: 0.95rem;">
-        Choose your preferred method below to support server hosting, infrastructure, and ongoing development.
-      </p>
-    </div>
+  <!-- Main Content -->
+  <div class="donations-page">
+    <h1 class="donations-title">DONATIONS</h1>
 
-    <!-- Dual Method Grid -->
-    <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+    <!-- Top Section: Message + Interactive Widget -->
+    <div class="top-donation-grid">
       
-      <!-- Method 1: Direct Static Addresses -->
-      <div style="background: #0f172a; border: 1px solid #1e293b; padding: 25px; border-radius: 10px; width: 380px; box-sizing: border-box; text-align: center;">
-        <h3 style="color: #38bdf8; margin-top: 0;">Direct Transfer</h3>
-        <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 15px;">Copy address directly:</p>
-        
-        <div style="font-weight: bold; font-size: 0.85rem; color: #38bdf8; text-align: left;">Bitcoin (BTC):</div>
-        <div style="font-size: 0.75rem; word-break: break-all; background: #0b132b; padding: 10px; border-radius: 6px; color: #cbd5e1; border: 1px solid rgba(56, 189, 248, 0.15); margin-top: 12px; text-align: left;">bc1qGIVE_YOUR_REAL_BTC_ADDRESS_HERE</div>
-
-        <div style="font-weight: bold; font-size: 0.85rem; color: #38bdf8; text-align: left; margin-top: 15px;">USDT (TRC20 Network):</div>
-        <div style="font-size: 0.75rem; word-break: break-all; background: #0b132b; padding: 10px; border-radius: 6px; color: #cbd5e1; border: 1px solid rgba(56, 189, 248, 0.15); margin-top: 12px; text-align: left;">TRX_YOUR_REAL_USDT_ADDRESS_HERE</div>
+      <!-- Left Column: Personal Note -->
+      <div class="donation-text">
+        <p>Developing open-source web projects and maintaining servers takes a lot of time and resources.</p>
+        <p>I pay for hosting, infrastructure, and tools out of pocket. If you find my work useful or want to support ongoing development, feel free to drop a donation!</p>
+        <p>Due to convenience and security, I accept cryptocurrencies. My direct wallet addresses and QR codes are listed below—feel free to donate whatever sum you want, whenever you want.</p>
       </div>
 
-      <!-- Method 2: Interactive Payment Widget Gateway -->
-      <div style="background: #0f172a; border: 1px solid #1e293b; padding: 25px; border-radius: 10px; width: 380px; box-sizing: border-box; text-align: center;">
-        <h3 style="color: #38bdf8; margin-top: 0;">Instant Widget</h3>
-        <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 15px;">Use the secure gateway for automated processing:</p>
+      <!-- Right Column: Interactive NOWPayments Widget -->
+      <div class="widget-container">
+        <div class="widget-header">Instant Widget</div>
+        <div class="widget-subtext">If you have crypto, you can use this payment widget for automated processing:</div>
         
         <iframe src="https://nowpayments.io/embeds/donation-widget?api_key=HMYQJB4-9QB4A5M-NNAJ8QK-31PBHVE" 
                 width="100%" 
@@ -67,13 +182,27 @@
 
     </div>
 
-    <!-- Back to Home Button -->
-    <div style="text-align: center; margin-top: 40px; margin-bottom: 80px;">
-      <a href="index.html" class="btn" style="text-decoration: none; padding: 10px 20px; background-color: #38bdf8; color: #0f172a; border-radius: 6px; font-weight: bold; font-family: sans-serif;">← Back to Home</a>
-    </div>
-  </main>
+    <!-- Bottom Section: Static Addresses & QR Codes -->
+    <div class="qr-section-title">Direct Transfer Addresses</div>
+    
+    <div class="qr-grid">
+      
+      <!-- Bitcoin Card -->
+      <div class="qr-card">
+        <div class="qr-header">Bitcoin (BTC)</div>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39" alt="BTC QR Code">
+        <div class="address-box">bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39</div>
+      </div>
 
-  <!-- Full-Width Footer -->
+    </div>
+
+    <!-- Back Button -->
+    <div style="text-align: center; margin-top: 40px; margin-bottom: 60px;">
+      <a href="index.html" class="btn" style="text-decoration: none; padding: 10px 22px; background-color: #38bdf8; color: #0f172a; border-radius: 6px; font-weight: bold; font-family: sans-serif;">← Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Standardized Full-Width Footer -->
   <footer style="width: 100%; text-align: center; padding: 25px 0; color: #94a3b8; font-size: 0.85rem; font-family: sans-serif; background: transparent; border-top: 1px solid rgba(56, 189, 248, 0.25);">
     © 2026 Berkeley. All Rights Reserved.
   </footer>
