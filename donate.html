@@ -15,7 +15,6 @@
       font-family: sans-serif;
     }
 
-    /* Header Banner */
     .hero-box {
       text-align: center;
       background: rgba(15, 23, 42, 0.85);
@@ -43,7 +42,6 @@
       color: #94a3b8;
     }
 
-    /* Cards Grid */
     .donation-methods-grid {
       display: flex;
       flex-wrap: wrap;
@@ -53,109 +51,23 @@
       margin-bottom: 45px;
     }
 
-    /* Trocador Style Widget Card */
+    /* Official Trocador Widget Card Container */
     .trocador-card {
       background: #1e1e24;
       border: 1px solid #2d2d38;
       border-radius: 16px;
-      padding: 25px;
+      padding: 20px;
       width: 360px;
       box-sizing: border-box;
       text-align: center;
       box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.7);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .trocador-header {
-      color: #f8fafc;
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      gap: 8px;
-    }
-
-    .trocador-input-box {
-      background: #2a2a35;
-      border: 1px solid #404052;
-      border-radius: 10px;
-      padding: 10px 14px;
-      display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 8px;
     }
 
-    .trocador-input-box input {
-      background: transparent;
-      border: none;
-      color: #fff;
-      font-size: 1.1rem;
-      width: 50%;
-      outline: none;
-    }
-
-    .trocador-dropdown {
-      background: #1e1e24;
-      color: #f8fafc;
-      border: 1px solid #404052;
-      border-radius: 6px;
-      padding: 6px 10px;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .trocador-min {
-      font-size: 0.78rem;
-      color: #94a3b8;
-      text-align: left;
-      margin-bottom: 15px;
-      padding-left: 4px;
-    }
-
-    .trocador-recipient {
-      font-size: 0.9rem;
-      color: #cbd5e1;
-      margin-bottom: 20px;
-    }
-
-    .trocador-recipient span {
-      color: #38bdf8;
-      font-weight: bold;
-    }
-
-    .trocador-btn {
-      background: #6366f1;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      padding: 12px;
-      font-size: 1.05rem;
-      font-weight: bold;
-      width: 100%;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
-      transition: opacity 0.2s ease;
-      text-decoration: none;
-      display: block;
-      box-sizing: border-box;
-    }
-
-    .trocador-btn:hover {
-      opacity: 0.9;
-    }
-
-    .trocador-footer {
-      font-size: 0.75rem;
-      color: #64748b;
-      margin-top: 18px;
-    }
-
-    /* Direct Bitcoin Card (Matching Height) */
+    /* Direct Bitcoin Card */
     .qr-card {
       background: #1e1e24;
       border: 1px solid #2d2d38;
@@ -256,25 +168,14 @@
     <!-- Dual Cards Grid -->
     <div class="donation-methods-grid">
       
-      <!-- Trocador Widget Style Card -->
+      <!-- Official Trocador Native Iframe Widget Card -->
       <div class="trocador-card">
-        <div>
-          <div class="trocador-header">🪙 Donate</div>
-          
-          <div class="trocador-input-box">
-            <input type="number" value="0.01" step="0.001">
-            <div class="trocador-dropdown">₿ Bitcoin ▾</div>
-          </div>
-          <div class="trocador-min">Minimum: 0.000064</div>
-          
-          <div class="trocador-recipient">to <span>Berkeley</span></div>
-        </div>
-
-        <div>
-            <!-- Connected to your generated Trocador AnonPay URL -->
-            <a href="https://trocador.app/anonpay/?ticker_to=btc&network_to=Mainnet&address=bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39&donation=True&simple_mode=True&name=Berkeley&email=ma0903092%40gmail.com&bgcolor=00000000&direct=False" target="_blank" class="trocador-btn">Donate</a>
-            <div class="trocador-footer">Powered by: 🔀 Trocador.app</div>
-          </div>
+        <iframe src="https://trocador.app/anonpay/?ticker_to=btc&network_to=Mainnet&address=bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39&donation=True&simple_mode=False&name=Berkeley&email=ma0903092%40gmail.com&bgcolor=00000000&direct=False" 
+                width="310" 
+                height="350" 
+                style="border:0; background: transparent;" 
+                scrolling="no">
+        </iframe>
       </div>
 
       <!-- Direct Bitcoin Card -->
