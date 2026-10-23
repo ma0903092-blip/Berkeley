@@ -7,153 +7,128 @@
   <link rel="icon" type="image/jpeg" href="new_logo.jpg">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Content Layout Styles */
     .donations-page {
-      max-width: 1050px;
+      max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
       color: #cbd5e1;
       font-family: sans-serif;
     }
 
+    /* Header Banner */
+    .hero-box {
+      text-align: center;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 35px 30px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+      margin-bottom: 40px;
+    }
+
     .donations-title {
       font-size: 2.2rem;
       letter-spacing: 2px;
-      color: #f3f4f6;
-      border-bottom: 1px solid rgba(56, 189, 248, 0.25);
-      padding-bottom: 12px;
-      margin-bottom: 35px;
+      color: #38bdf8;
+      margin: 0 0 15px 0;
       text-transform: uppercase;
     }
 
-    /* Top Section Grid: Note + Widget */
-    .top-donation-grid {
+    .hero-text {
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-size: 0.95rem;
+      color: #94a3b8;
+    }
+
+    /* 2-Column Main Options Grid */
+    .donation-methods-grid {
       display: flex;
       gap: 30px;
+      justify-content: center;
       align-items: stretch;
       margin-bottom: 50px;
     }
 
-    .donation-text {
+    .method-card {
       flex: 1;
+      min-width: 320px;
       background: rgba(15, 23, 42, 0.85);
       border: 1px solid #1e293b;
-      border-radius: 10px;
-      padding: 30px;
-      line-height: 1.8;
-      font-size: 0.95rem;
-      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      padding: 25px;
+      backdrop-filter: blur(10px);
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
-    }
-
-    .donation-text p {
-      margin-bottom: 18px;
-    }
-
-    .donation-text p:last-child {
-      margin-bottom: 0;
-    }
-
-    .widget-container {
-      width: 360px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid #1e293b;
-      border-radius: 10px;
-      padding: 20px;
-      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
     }
 
-    .widget-header {
-      font-size: 1.15rem;
+    .method-header {
+      font-size: 1.2rem;
       font-weight: 600;
       color: #38bdf8;
       margin-bottom: 6px;
     }
 
-    .widget-subtext {
+    .method-subtext {
       font-size: 0.82rem;
       color: #94a3b8;
-      margin-bottom: 15px;
-      line-height: 1.4;
+      margin-bottom: 20px;
     }
 
-    /* Static QR Grid Section */
-    .qr-section-title {
-      font-size: 1.3rem;
-      color: #38bdf8;
-      margin-bottom: 25px;
-      border-bottom: 1px solid rgba(56, 189, 248, 0.2);
-      padding-bottom: 8px;
-      font-weight: 600;
-    }
-
-    .qr-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      justify-content: center;
-      margin-bottom: 50px;
-    }
-
-    .qr-card {
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid #1e293b;
-      border-radius: 10px;
-      overflow: hidden;
-      text-align: center;
-      padding-bottom: 20px;
-      width: 340px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4);
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .qr-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(56, 189, 248, 0.4);
-    }
-
-    .qr-header {
-      background: rgba(56, 189, 248, 0.12);
-      color: #38bdf8;
-      font-weight: bold;
-      padding: 12px;
-      font-size: 0.9rem;
-      border-bottom: 1px solid #1e293b;
-      letter-spacing: 0.5px;
-    }
-
-    .qr-card img {
-      width: 180px;
-      height: 180px;
-      margin: 20px 0 15px 0;
-      border-radius: 6px;
+    /* Direct Transfer Specifics */
+    .qr-img {
+      width: 170px;
+      height: 170px;
       background: #fff;
       padding: 6px;
+      border-radius: 8px;
+      margin-bottom: 18px;
     }
 
-    .address-box {
-      font-size: 0.78rem;
+    .address-wrapper {
+      width: 100%;
+      background: #0b132b;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 6px;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-top: auto;
+    }
+
+    .address-text {
+      font-size: 0.75rem;
       font-family: monospace;
       word-break: break-all;
-      background: #0b132b;
-      padding: 10px 14px;
-      margin: 0 18px;
-      border-radius: 6px;
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      color: #cbd5e1;
+      margin-bottom: 8px;
     }
 
-    /* Responsive adjustment for tablet/mobile */
-    @media (max-width: 850px) {
-      .top-donation-grid {
+    .copy-btn {
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .donation-methods-grid {
         flex-direction: column;
-      }
-      .widget-container {
-        width: 100%;
       }
     }
   </style>
@@ -178,24 +153,25 @@
     </div>
   </nav>
 
-  <!-- Main Content -->
+  <!-- Main Content Area -->
   <div class="donations-page">
-    <h1 class="donations-title">DONATIONS</h1>
+    
+    <!-- Hero Note -->
+    <div class="hero-box">
+      <h1 class="donations-title">Support Development</h1>
+      <p class="hero-text">
+        Developing open-source web projects and maintaining infrastructure takes time and resources. 
+        If you find my work useful, feel free to support server hosting and ongoing development!
+      </p>
+    </div>
 
-    <!-- Top Section: Message + Interactive Widget -->
-    <div class="top-donation-grid">
+    <!-- Dual Payment Cards Grid -->
+    <div class="donation-methods-grid">
       
-      <!-- Left Column: Personal Note -->
-      <div class="donation-text">
-        <p>Developing open-source web projects and maintaining servers takes a lot of time and resources.</p>
-        <p>I pay for hosting, infrastructure, and tools out of pocket. If you find my work useful or want to support ongoing development, feel free to drop a donation!</p>
-        <p>Due to convenience and security, I accept cryptocurrencies. My direct wallet addresses and QR codes are listed below—feel free to donate whatever sum you want, whenever you want.</p>
-      </div>
-
-      <!-- Right Column: Interactive NOWPayments Widget -->
-      <div class="widget-container">
-        <div class="widget-header">Instant Widget</div>
-        <div class="widget-subtext">If you have crypto, you can use this payment widget for automated processing:</div>
+      <!-- Option 1: Automated Payment Gateway Widget -->
+      <div class="method-card">
+        <div class="method-header">Instant Gateway</div>
+        <div class="method-subtext">Automated widget supporting multiple cryptocurrencies</div>
         
         <iframe src="https://nowpayments.io/embeds/donation-widget?api_key=HMYQJB4-9QB4A5M-NNAJ8QK-31PBHVE" 
                 width="100%" 
@@ -206,32 +182,44 @@
         </iframe>
       </div>
 
-    </div>
-
-    <!-- Bottom Section: Static Addresses & QR Codes -->
-    <div class="qr-section-title">Direct Transfer Addresses</div>
-    
-    <div class="qr-grid">
-      
-      <!-- Bitcoin Card -->
-      <div class="qr-card">
-        <div class="qr-header">Bitcoin (BTC)</div>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39" alt="BTC QR Code">
-        <div class="address-box">bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39</div>
+      <!-- Option 2: Direct Bitcoin Transfer -->
+      <div class="method-card">
+        <div class="method-header">Direct Bitcoin Transfer</div>
+        <div class="method-subtext">Scan QR code or copy direct wallet address below</div>
+        
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39" alt="BTC QR Code" class="qr-img">
+        
+        <div class="address-wrapper">
+          <div class="address-text" id="btc-address">bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39</div>
+          <button class="copy-btn" onclick="copyAddress()">Copy Address</button>
+        </div>
       </div>
 
     </div>
 
     <!-- Back Button -->
-    <div style="text-align: center; margin-top: 40px; margin-bottom: 60px;">
+    <div style="text-align: center; margin-bottom: 60px;">
       <a href="index.html" class="btn" style="text-decoration: none; padding: 10px 24px; background-color: #38bdf8; color: #0f172a; border-radius: 6px; font-weight: bold; font-family: sans-serif;">← Back to Home</a>
     </div>
+
   </div>
 
-  <!-- Standardized Full-Width Footer -->
+  <!-- Full-Width Footer -->
   <footer style="width: 100%; text-align: center; padding: 25px 0; color: #94a3b8; font-size: 0.85rem; font-family: sans-serif; background: transparent; border-top: 1px solid rgba(56, 189, 248, 0.25);">
     © 2026 Berkeley. All Rights Reserved.
   </footer>
+
+  <!-- Simple Copy Script -->
+  <script>
+    function copyAddress() {
+      const addr = document.getElementById("btc-address").innerText;
+      navigator.clipboard.writeText(addr).then(() => {
+        const btn = document.querySelector(".copy-btn");
+        btn.innerText = "Copied!";
+        setTimeout(() => { btn.innerText = "Copy Address"; }, 2000);
+      });
+    }
+  </script>
 
 </body>
 </html>
