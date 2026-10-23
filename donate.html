@@ -82,13 +82,22 @@
     }
 
     /* Direct Transfer Specifics */
+    .btc-card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 440px;
+      width: 100%;
+    }
+
     .qr-img {
-      width: 170px;
-      height: 170px;
+      width: 180px;
+      height: 180px;
       background: #fff;
-      padding: 6px;
+      padding: 8px;
       border-radius: 8px;
-      margin-bottom: 15px;
+      margin: 10px 0;
     }
 
     .address-wrapper {
@@ -96,7 +105,7 @@
       background: #0b132b;
       border: 1px solid rgba(56, 189, 248, 0.2);
       border-radius: 6px;
-      padding: 10px;
+      padding: 12px;
       box-sizing: border-box;
       margin-top: auto;
     }
@@ -106,19 +115,20 @@
       font-family: monospace;
       word-break: break-all;
       color: #cbd5e1;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .copy-btn {
       background: rgba(56, 189, 248, 0.15);
       color: #38bdf8;
       border: 1px solid rgba(56, 189, 248, 0.3);
-      padding: 6px 14px;
+      padding: 8px 16px;
       border-radius: 4px;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: bold;
       cursor: pointer;
       transition: all 0.2s ease;
+      width: 100%;
     }
 
     .copy-btn:hover {
@@ -130,6 +140,9 @@
     @media (max-width: 768px) {
       .donation-methods-grid {
         flex-direction: column;
+      }
+      .btc-card-content {
+        height: auto;
       }
     }
   </style>
@@ -176,9 +189,9 @@
         
         <iframe src="https://nowpayments.io/embeds/donation-widget?api_key=HMYQJB4-9QB4A5M-NNAJ8QK-31PBHVE" 
                 width="100%" 
-                height="390" 
+                height="440" 
                 frameborder="0" 
-                scrolling="auto" 
+                scrolling="no" 
                 style="border-radius: 6px; border: none; background: #ffffff;">
         </iframe>
       </div>
@@ -188,11 +201,13 @@
         <div class="method-header">Direct Bitcoin Transfer</div>
         <div class="method-subtext">Scan QR code or copy direct wallet address below</div>
         
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39" alt="BTC QR Code" class="qr-img">
-        
-        <div class="address-wrapper">
-          <div class="address-text" id="btc-address">bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39</div>
-          <button class="copy-btn" onclick="copyAddress()">Copy Address</button>
+        <div class="btc-card-content">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39" alt="BTC QR Code" class="qr-img">
+          
+          <div class="address-wrapper">
+            <div class="address-text" id="btc-address">bc1qra9xndpsu5mjjvpaxfhus3r6k6czm0jfqe7f39</div>
+            <button class="copy-btn" onclick="copyAddress()">Copy Address</button>
+          </div>
         </div>
       </div>
 
