@@ -4,52 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Donate - Berkeley | Web Developer</title>
-  <style>
-    body {
-      background-color: #0b132b;
-      color: #f3f4f6;
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .main-container {
-      max-width: 900px;
-      margin: 40px auto 20px auto;
-      padding: 0 15px;
-    }
-    .donation-grid {
-      display: flex;
-      gap: 30px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-    .donation-card {
-      background: #0f172a;
-      border: 1px solid #1e293b;
-      padding: 25px;
-      border-radius: 10px;
-      width: 380px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-    .wallet-box {
-      font-size: 0.75rem;
-      word-break: break-all;
-      background: #0b132b;
-      padding: 10px;
-      border-radius: 6px;
-      color: #cbd5e1;
-      border: 1px solid rgba(56, 189, 248, 0.15);
-      margin-top: 12px;
-      text-align: left;
-    }
-  </style>
+  <link rel="icon" type="image/jpeg" href="new_logo.jpg">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color: #0b132b; color: #f3f4f6; font-family: sans-serif; margin: 0; padding: 0;">
 
-  <main class="main-container">
-    <!-- Header Section -->
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html" class="logo-box">
+        <img src="new_logo.jpg" alt="BK Logo" class="brand-icon">
+        <span>Berkeley</span>
+      </a>
+    </div>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="faq.html">FAQ</a>
+      <a href="donate.html" style="color: #38bdf8; font-weight: 600;">Donate</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="main-container" style="max-width: 900px; margin: 40px auto 20px auto; padding: 0 15px;">
     <div style="text-align: center;">
       <h1 style="color: #f3f4f6; font-size: 2.2rem; margin-bottom: 10px;">Support the Project</h1>
       <p style="color: #94a3b8; max-width: 650px; margin: 0 auto; font-size: 0.95rem;">
@@ -58,28 +37,25 @@
     </div>
 
     <!-- Dual Method Grid -->
-    <div class="donation-grid">
+    <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
       
       <!-- Method 1: Direct Static Addresses -->
-      <div class="donation-card">
+      <div style="background: #0f172a; border: 1px solid #1e293b; padding: 25px; border-radius: 10px; width: 380px; box-sizing: border-box; text-align: center;">
         <h3 style="color: #38bdf8; margin-top: 0;">Direct Transfer</h3>
         <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 15px;">Copy address directly:</p>
         
-        <!-- Bitcoin Details -->
         <div style="font-weight: bold; font-size: 0.85rem; color: #38bdf8; text-align: left;">Bitcoin (BTC):</div>
-        <div class="wallet-box">bc1qGIVE_YOUR_REAL_BTC_ADDRESS_HERE</div>
+        <div style="font-size: 0.75rem; word-break: break-all; background: #0b132b; padding: 10px; border-radius: 6px; color: #cbd5e1; border: 1px solid rgba(56, 189, 248, 0.15); margin-top: 12px; text-align: left;">bc1qGIVE_YOUR_REAL_BTC_ADDRESS_HERE</div>
 
-        <!-- USDT TRC20 Details -->
         <div style="font-weight: bold; font-size: 0.85rem; color: #38bdf8; text-align: left; margin-top: 15px;">USDT (TRC20 Network):</div>
-        <div class="wallet-box">TRX_YOUR_REAL_USDT_ADDRESS_HERE</div>
+        <div style="font-size: 0.75rem; word-break: break-all; background: #0b132b; padding: 10px; border-radius: 6px; color: #cbd5e1; border: 1px solid rgba(56, 189, 248, 0.15); margin-top: 12px; text-align: left;">TRX_YOUR_REAL_USDT_ADDRESS_HERE</div>
       </div>
 
       <!-- Method 2: Interactive Payment Widget Gateway -->
-      <div class="donation-card">
+      <div style="background: #0f172a; border: 1px solid #1e293b; padding: 25px; border-radius: 10px; width: 380px; box-sizing: border-box; text-align: center;">
         <h3 style="color: #38bdf8; margin-top: 0;">Instant Widget</h3>
         <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 15px;">Use the secure gateway for automated processing:</p>
         
-        <!-- Gateway Embed Container -->
         <div style="background: #0b132b; border: 1px dashed #1e293b; padding: 60px 20px; border-radius: 6px; color: #64748b; font-size: 0.85rem;">
           [ Insert your payment gateway widget code here ]
         </div>
@@ -87,13 +63,13 @@
 
     </div>
 
-    <!-- Back to Home Button with Controlled Spacing -->
+    <!-- Back to Home Button -->
     <div style="text-align: center; margin-top: 40px; margin-bottom: 80px;">
       <a href="index.html" class="btn" style="text-decoration: none; padding: 10px 20px; background-color: #38bdf8; color: #0f172a; border-radius: 6px; font-weight: bold; font-family: sans-serif;">← Back to Home</a>
     </div>
   </main>
 
-  <!-- Standardized Full-Width Footer -->
+  <!-- Full-Width Footer -->
   <footer style="width: 100%; text-align: center; padding: 25px 0; color: #94a3b8; font-size: 0.85rem; font-family: sans-serif; background: transparent; border-top: 1px solid rgba(56, 189, 248, 0.25);">
     © 2026 Berkeley. All Rights Reserved.
   </footer>
